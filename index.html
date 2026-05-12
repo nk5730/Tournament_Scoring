@@ -7,7 +7,6 @@
 <title>Tournament Tracker</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ── THEMES ── */
 [data-theme="light"]{--gold:#C47A0A;--gold-l:rgba(196,122,10,0.10);--gold-b:#F5A623;--silver:#7A8899;--bronze:#8B5A2B;--bg:#F6F6F1;--bg2:#FFFFFF;--bg3:#EFEFEA;--border:#DDDDD5;--text:#1C1C1A;--text2:#5A5A54;--text3:#AAAAAA;--green:#1A7A30;--red:#C0392B;--topbar:#FFFFFF;--sh:0 1px 5px rgba(0,0,0,.07);--lb1:linear-gradient(120deg,rgba(196,122,10,.07),#fff);--lb2:linear-gradient(120deg,rgba(122,136,153,.06),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.06),#fff);}
 [data-theme="dark"]{--gold:#F5A623;--gold-l:rgba(245,166,35,0.12);--gold-b:#FFD166;--silver:#A8B2C1;--bronze:#CD7F32;--bg:#0D1117;--bg2:#161B22;--bg3:#21262D;--border:#30363D;--text:#E6EDF3;--text2:#8B949E;--text3:#484F58;--green:#3FB950;--red:#F85149;--topbar:#161B22;--sh:none;--lb1:linear-gradient(120deg,rgba(245,166,35,.13),#161B22);--lb2:linear-gradient(120deg,rgba(168,178,193,.08),#161B22);--lb3:linear-gradient(120deg,rgba(205,127,50,.09),#161B22);}
 [data-theme="green"]{--gold:#15803D;--gold-l:rgba(21,128,61,0.10);--gold-b:#22C55E;--silver:#6B7A8D;--bronze:#8B5A2B;--bg:#F0FDF4;--bg2:#FFFFFF;--bg3:#DCFCE7;--border:#86EFAC;--text:#14532D;--text2:#166534;--text3:#4ADE80;--green:#15803D;--red:#DC2626;--topbar:#FFFFFF;--sh:0 1px 4px rgba(0,0,0,.06);--lb1:linear-gradient(120deg,rgba(21,128,61,.09),#fff);--lb2:linear-gradient(120deg,rgba(107,122,141,.05),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.05),#fff);}
@@ -16,7 +15,6 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;overscroll-behavior:none;}
 
-/* ── APP SHELL ── */
 #app{height:100vh;display:flex;flex-direction:column;}
 .topbar{background:var(--topbar);border-bottom:1px solid var(--border);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:var(--sh);}
 .tb-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--gold);}
@@ -42,11 +40,10 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .nav-btn .ni{font-size:18px;}
 .nav-btn.on{color:var(--gold);}
 
-/* ── CARD ── */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:10px;box-shadow:var(--sh);}
 .card-title{font-size:12px;font-weight:700;color:var(--text2);margin-bottom:11px;display:flex;align-items:center;gap:5px;}
 
-/* ── LEADERBOARD ── */
+/* LEADERBOARD */
 .lb-hdr{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:1.2px;color:var(--text3);padding:2px 0 10px;}
 .lbc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:13px 12px;margin-bottom:7px;display:flex;align-items:center;gap:11px;box-shadow:var(--sh);}
 .lbc.r1{border-color:var(--gold);background:var(--lb1);}
@@ -60,45 +57,39 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .lb-pts{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);line-height:1;}
 .lb-pts-l{font-size:9px;color:var(--text2);text-align:right;font-weight:700;text-transform:uppercase;}
 
-/* ── SCORE TABLE ── */
+/* SCORE TABLE */
 .score-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .stbl{width:100%;border-collapse:collapse;}
-.stbl th{font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.4px;padding:8px 6px;border-bottom:2px solid var(--border);white-space:nowrap;text-align:center;background:var(--bg2);}
-.stbl th.nth{text-align:left;min-width:90px;}
-.stbl td{padding:7px 5px;border-bottom:1px solid var(--bg3);font-size:13px;vertical-align:middle;text-align:center;}
+.stbl th{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;padding:10px 8px;border-bottom:2px solid var(--border);white-space:nowrap;text-align:center;background:var(--bg2);}
+.stbl th.nth{text-align:left;min-width:110px;}
+.stbl td{padding:9px 7px;border-bottom:1px solid var(--bg3);font-size:14px;vertical-align:middle;text-align:center;}
 .stbl tr:last-child td{border-bottom:none;}
 .stbl tr:hover td{background:var(--bg3);}
-.pnc{font-weight:700;color:var(--text);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:90px;}
-.sci{width:54px;padding:5px 2px;background:var(--bg3);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:13px;font-family:'Nunito',sans-serif;font-weight:700;text-align:center;transition:border-color .2s;}
+.pnc{font-weight:700;color:var(--text);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px;}
+.sci{width:70px;padding:8px 4px;background:var(--bg3);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:16px;font-family:'Nunito',sans-serif;font-weight:700;text-align:center;transition:border-color .2s;}
 .sci:focus{outline:none;border-color:var(--gold);}
-.tc{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--gold);}
+.tc{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);}
 
-/* ── BUTTONS ── */
-.btn{padding:10px 14px;border-radius:var(--rs);border:none;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:transform .1s;}
+.btn{padding:11px 15px;border-radius:var(--rs);border:none;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:transform .1s;}
 .btn:active{transform:scale(.97);}
 .btn-gold{background:var(--gold);color:#fff;}
 .btn-out{background:var(--bg3);border:1.5px solid var(--border);color:var(--text2);}
 .btn-red{background:rgba(192,57,43,.1);border:1.5px solid rgba(192,57,43,.3);color:var(--red);}
-.btn-green{background:rgba(26,122,48,.1);border:1.5px solid rgba(26,122,48,.3);color:var(--green);}
 .btn-full{width:100%;justify-content:center;}
 
-/* ── INPUTS ── */
 .inp{width:100%;padding:11px 12px;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:13px;font-family:'Nunito',sans-serif;transition:border-color .2s;}
 .inp:focus{outline:none;border-color:var(--gold);}
 .inp::placeholder{color:var(--text3);}
 .inp-lbl{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:5px;margin-top:11px;}
 .inp-lbl:first-child{margin-top:0;}
 
-/* ── PLAYER CHIP ── */
-.pchip{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:5px;}
-.pcn{font-size:13px;font-weight:700;color:var(--text);}
-.pcs{font-size:10px;color:var(--text3);margin-top:1px;}
-.pcrm{background:rgba(192,57,43,.1);border:1px solid rgba(192,57,43,.2);color:var(--red);cursor:pointer;font-size:11px;padding:3px 8px;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;}
-.tsep{text-align:center;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;margin:4px 0;}
-.add-row{display:flex;gap:7px;margin-bottom:8px;}
+.pchip{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:6px;}
+.pcn{font-size:14px;font-weight:700;color:var(--text);}
+.pcrm{background:rgba(192,57,43,.1);border:1px solid rgba(192,57,43,.2);color:var(--red);cursor:pointer;font-size:11px;padding:4px 9px;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;}
+.add-row{display:flex;gap:8px;margin-bottom:8px;}
 .add-row .inp{flex:1;}
 
-/* ── ACCESS REQUEST ── */
+/* ACCESS REQUEST */
 .req-status-box{border-radius:var(--r);padding:14px;margin-bottom:10px;text-align:center;}
 .req-status-box.pending{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.3);}
 .req-status-box.approved{background:rgba(26,122,48,.1);border:1px solid rgba(26,122,48,.3);}
@@ -107,7 +98,6 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .req-status-sub{font-size:12px;color:var(--text2);line-height:1.5;}
 .poll-bar{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);margin-top:10px;justify-content:center;}
 
-/* ── ADMIN PIN MODAL ── */
 .modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;}
 .modal{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;width:100%;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.2);}
 .modal-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--gold);margin-bottom:4px;}
@@ -116,21 +106,17 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .pin-inp:focus{outline:none;border-color:var(--gold);}
 .modal-row{display:flex;gap:8px;margin-top:10px;}
 
-/* ── THEME DOTS ── */
 .tdots{display:flex;gap:8px;margin-top:8px;}
 .tdot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:transform .15s,border-color .15s;flex-shrink:0;}
 .tdot.on{border-color:var(--text);transform:scale(1.2);}
 
-/* ── EMPTY ── */
 .empty{text-align:center;padding:32px 16px;color:var(--text3);}
 .ei{font-size:32px;margin-bottom:6px;}
 .et{font-size:12px;line-height:1.6;}
 
-/* ── INFO BOX ── */
 .info-box{background:var(--gold-l);border:1px solid rgba(196,122,10,.25);border-radius:var(--rs);padding:11px 13px;font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px;}
 .info-box b{color:var(--text);}
 
-/* ── TOAST ── */
 .toast{position:fixed;bottom:72px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--bg2);color:var(--text);border:1px solid var(--border);padding:9px 16px;border-radius:99px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;z-index:9999;white-space:nowrap;max-width:92vw;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.1);}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .toast.ok{background:#e8f9ee;border-color:var(--green);color:var(--green);}
@@ -139,7 +125,6 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 </head>
 <body data-theme="light">
 
-<!-- ══════════ APP SHELL (always visible) ══════════ -->
 <div id="app">
   <div class="topbar">
     <div>
@@ -154,56 +139,48 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
   </div>
 
   <div class="scroll-area">
-    <!-- LEADERBOARD (default) -->
+    <!-- LEADERBOARD -->
     <div id="pg-lb" class="page on">
+      <input class="inp" id="search-lb" placeholder="🔍 Search leaderboard…" oninput="filterLeaderboard(this.value)" style="margin-bottom:10px;">
       <div id="lb-content"></div>
     </div>
 
-    <!-- SCORES (write only) -->
+    <!-- SCORES -->
     <div id="pg-scores" class="page">
       <div class="card">
-        <div class="card-title">✏️ Scores — All Rounds</div>
+        <div class="card-title">✏️ Scores — 3 Rounds</div>
+        <input class="inp" id="search-scores" placeholder="🔍 Search players…" oninput="filterScores(this.value)" style="margin-bottom:10px;">
         <div class="score-wrap">
           <table class="stbl">
-            <thead><tr id="s-head"></tr></thead>
+            <thead><tr><th class="nth">Player</th><th>Round 1</th><th>Round 2</th><th>Round 3</th><th>Total</th></tr></thead>
             <tbody id="s-body"></tbody>
           </table>
         </div>
-        <div style="margin-top:11px;">
+        <div style="margin-top:12px;">
           <button class="btn btn-gold btn-full" onclick="saveScores()">💾 Save All Scores</button>
         </div>
       </div>
     </div>
 
-    <!-- PLAYERS (write only) -->
+    <!-- PLAYERS -->
     <div id="pg-players" class="page">
       <div class="card" id="add-p-card">
-        <div class="card-title" id="add-p-lbl">➕ Add Player</div>
-        <div id="singles-form">
-          <div class="add-row">
-            <input class="inp" id="np1" placeholder="Player name…" onkeydown="if(event.key==='Enter')addPlayer()">
-            <button class="btn btn-gold" onclick="addPlayer()">Add</button>
-          </div>
-        </div>
-        <div id="doubles-form" style="display:none;">
-          <div class="add-row"><input class="inp" id="nd1" placeholder="Player 1…"></div>
-          <div class="tsep">+ partner</div>
-          <div class="add-row">
-            <input class="inp" id="nd2" placeholder="Player 2…" onkeydown="if(event.key==='Enter')addPlayer()">
-            <button class="btn btn-gold" onclick="addPlayer()">Add Team</button>
-          </div>
+        <div class="card-title">➕ Add Player</div>
+        <div class="add-row">
+          <input class="inp" id="np1" placeholder="Player name…" onkeydown="if(event.key==='Enter')addPlayer()">
+          <button class="btn btn-gold" onclick="addPlayer()">Add</button>
         </div>
       </div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;color:var(--text2);margin:12px 0 8px;">
         👥 Players <span id="p-count" style="color:var(--gold);"></span>
       </div>
+      <input class="inp" id="search-players" placeholder="🔍 Search players…" oninput="filterPlayers(this.value)" style="margin-bottom:10px;">
       <div id="player-list"></div>
     </div>
 
-    <!-- EXPORT / ACCESS REQUEST -->
+    <!-- EXPORT / ACCESS -->
     <div id="pg-export" class="page">
-
-      <!-- REQUEST ACCESS section (shown when read-only) -->
+      <!-- REQUEST ACCESS -->
       <div id="req-section">
         <div class="card">
           <div class="card-title">🔓 Request Write Access</div>
@@ -221,7 +198,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
               <div class="req-status-icon">⏳</div>
               <div class="req-status-title" style="color:var(--gold-b);">Request Pending</div>
               <div class="req-status-sub">Your request has been sent.<br>This page checks for approval automatically.</div>
-              <div class="poll-bar"><div class="sdot busy"></div><span id="poll-txt">Checking for approval…</span></div>
+              <div class="poll-bar"><div class="sdot busy"></div><span id="poll-txt">Checking…</span></div>
             </div>
             <button class="btn btn-out btn-full" onclick="cancelRequest()">Cancel Request</button>
           </div>
@@ -229,74 +206,64 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
             <div class="req-status-box approved">
               <div class="req-status-icon">✅</div>
               <div class="req-status-title" style="color:var(--green);">Access Approved!</div>
-              <div class="req-status-sub">You now have write access.<br>Redirecting you now…</div>
+              <div class="req-status-sub">You now have write access.<br>Redirecting…</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- SHEET / EXPORT (shown when write access) -->
+      <!-- EXPORT (write access) -->
       <div id="export-section" style="display:none;">
         <div class="card">
           <div class="card-title">📊 Google Sheet</div>
-          <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="openSheet()">🔗 Open on Google Drive</button>
+          <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="openSheet()">🔗 Open on Drive</button>
           <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="refreshSheet()">🔄 Refresh from Sheet</button>
           <button class="btn btn-out btn-full" onclick="exportCSV()">⬇ Download CSV</button>
         </div>
-        <div id="admin-export-section" style="display:none;">
+        <div id="admin-export" style="display:none;">
           <div class="card">
             <div class="card-title">👑 Admin — Access Requests</div>
-            <div class="info-box">Open the Google Sheet → <b>AccessRequests</b> tab → change <b>Status</b> column from <b>Pending</b> to <b>Approved</b>. The user's app will unlock automatically within 30 seconds.</div>
-            <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="openSheet()">📋 Open AccessRequests Sheet</button>
+            <div class="info-box">Open Sheet → <b>AccessRequests</b> tab → change <b>Status</b> to <b>Approved</b>. User unlocks in 30s.</div>
+            <button class="btn btn-out btn-full" onclick="openSheet()">📋 Open AccessRequests</button>
           </div>
           <div class="card">
             <div class="card-title">🎨 Theme</div>
             <div class="tdots">
-              <div class="tdot on" data-t="light"  style="background:#F6F6F1;border-color:#999;" onclick="applyTheme('light',this)"  title="Light"></div>
-              <div class="tdot"    data-t="dark"   style="background:#0D1117;"                  onclick="applyTheme('dark',this)"   title="Dark"></div>
-              <div class="tdot"    data-t="green"  style="background:#15803D;"                  onclick="applyTheme('green',this)"  title="Green"></div>
-              <div class="tdot"    data-t="blue"   style="background:#1D4ED8;"                  onclick="applyTheme('blue',this)"   title="Blue"></div>
+              <div class="tdot on" data-t="light"  style="background:#F6F6F1;border-color:#999;" onclick="applyTheme('light',this)"></div>
+              <div class="tdot"    data-t="dark"   style="background:#0D1117;"                  onclick="applyTheme('dark',this)"></div>
+              <div class="tdot"    data-t="green"  style="background:#15803D;"                  onclick="applyTheme('green',this)"></div>
+              <div class="tdot"    data-t="blue"   style="background:#1D4ED8;"                  onclick="applyTheme('blue',this)"></div>
             </div>
           </div>
           <div class="card">
             <div class="card-title" style="color:var(--red);">⚠️ Danger Zone</div>
-            <div style="font-size:12px;color:var(--text2);margin-bottom:9px;line-height:1.5;">Creates a <b>backup_N</b> sheet in Drive before clearing all data.</div>
-            <button class="btn btn-red btn-full" onclick="confirmReset()">🔄 Reset &amp; Backup Data</button>
-          </div>
-          <div class="card">
-            <div class="card-title">⚙️ Apps Script</div>
-            <div style="font-size:11px;color:var(--text2);margin-bottom:7px;line-height:1.5;">
-              See setup instructions at the bottom of this page.
-            </div>
-            <textarea id="script-area" readonly style="width:100%;min-height:90px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--green);font-family:monospace;font-size:10px;padding:10px;line-height:1.5;resize:none;"></textarea>
-            <button class="btn btn-out btn-full" style="margin-top:7px;" onclick="copyScript()">📋 Copy Script</button>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:9px;">Creates <b>backup_N</b> sheet before clearing.</div>
+            <button class="btn btn-red btn-full" onclick="confirmReset()">🔄 Reset &amp; Backup</button>
           </div>
         </div>
       </div>
 
-      <!-- SETUP GUIDE (always visible at bottom of export tab) -->
-      <div class="card" style="margin-top:4px;">
+      <!-- SETUP GUIDE -->
+      <div class="card">
         <div class="card-title">📖 Setup Guide</div>
-        <div class="info-box" style="margin-bottom:0;">
-          <b>Step 1</b> — Go to <b>script.google.com</b> → New project → paste the Apps Script code above → Save<br><br>
-          <b>Step 2</b> — Click <b>Deploy → New deployment → Web App</b><br>
-          Execute as: <b>Me</b> · Access: <b>Anyone</b> → Deploy → Copy URL<br><br>
-          <b>Step 3</b> — Open this HTML file → find the line:<br>
-          <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">const WEB_APP_URL = ''</code><br>
-          Paste your URL between the quotes → Save → push to GitHub.<br><br>
-          <b>Step 4</b> — Set your admin PIN on the same line:<br>
-          <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">const ADMIN_PIN = ''</code><br><br>
-          Done! All users share the same sheet automatically.
+        <div class="info-box" style="margin:0;">
+          <b>1.</b> Go to <b>script.google.com</b> → New project → paste script below → Save<br><br>
+          <b>2.</b> Deploy → Web App → Execute as: <b>Me</b> · Access: <b>Anyone</b> → Deploy → Copy URL<br><br>
+          <b>3.</b> In HTML, set:<br>
+          <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">WEB_APP_URL = 'your-url'</code><br>
+          <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">ADMIN_PIN = 'secret'</code>
         </div>
+        <textarea id="script-area" readonly style="width:100%;min-height:90px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--green);font-family:monospace;font-size:10px;padding:10px;line-height:1.5;resize:none;margin-top:10px;"></textarea>
+        <button class="btn btn-out btn-full" style="margin-top:7px;" onclick="copyScript()">📋 Copy Script</button>
       </div>
     </div>
   </div>
 
   <div class="bottom-nav">
-    <button class="nav-btn on"  onclick="goTab('lb')">      <span class="ni">🏆</span>Board</button>
-    <button class="nav-btn"     id="nav-scores"   onclick="goTab('scores')">  <span class="ni">✏️</span>Scores</button>
-    <button class="nav-btn"     id="nav-players"  onclick="goTab('players')"> <span class="ni">👥</span>Players</button>
-    <button class="nav-btn"     onclick="goTab('export')">  <span class="ni">📤</span>Access</button>
+    <button class="nav-btn on"  onclick="goTab('lb')">     <span class="ni">🏆</span>Board</button>
+    <button class="nav-btn" id="nav-scores"  onclick="goTab('scores')"> <span class="ni">✏️</span>Scores</button>
+    <button class="nav-btn" id="nav-players" onclick="goTab('players')"><span class="ni">👥</span>Players</button>
+    <button class="nav-btn" onclick="goTab('export')"> <span class="ni">📤</span>Access</button>
   </div>
 </div>
 
@@ -304,7 +271,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 <div class="modal-wrap" id="pin-modal" style="display:none;">
   <div class="modal">
     <div class="modal-title">🔑 Admin Access</div>
-    <div class="modal-sub">Enter your admin PIN to unlock full tournament management.</div>
+    <div class="modal-sub">Enter admin PIN to unlock full management.</div>
     <input class="pin-inp" id="pin-val" type="password" placeholder="••••" onkeydown="if(event.key==='Enter')tryAdminPin()">
     <div class="modal-row">
       <button class="btn btn-out btn-full" onclick="closeModal()">Cancel</button>
@@ -317,88 +284,89 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 
 <script>
 /* ═══════════════════════════════════════════════════
-   ▼▼▼  CONFIGURE THESE TWO LINES BEFORE PUSHING  ▼▼▼
+   ▼▼▼  CONFIGURE BEFORE PUSHING TO GITHUB  ▼▼▼
 ═══════════════════════════════════════════════════ */
-const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyG23iSwf7g2LWqpUxENpsmJxTlV7gZqCrsPUwnzPhhL4JFrAH3HxP6VzXwU0xDT-H8/exec';   // ← paste your Apps Script Web App URL here
-const ADMIN_PIN   = 'DadaBhagwan';   // ← set your secret admin PIN here
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyG23iSwf7g2LWqpUxENpsmJxTlV7gZqCrsPUwnzPhhL4JFrAH3HxP6VzXwU0xDT-H8/exec';   // ← paste Web App URL here
+const ADMIN_PIN   = 'DadaBhagwan';   // ← set admin PIN here
 /* ═══════════════════════════════════════════════════
    ▲▲▲  THAT'S ALL YOU NEED TO CHANGE  ▲▲▲
 ═══════════════════════════════════════════════════ */
 
-/* ── APPS SCRIPT CODE (copy this to script.google.com) ── */
+/* ── APPS SCRIPT (copy to script.google.com) ── */
 const AS_CODE = `function doGet(e){return handle(e);}
 function doPost(e){return handle(e);}
+function respond(d){return ContentService.createTextOutput(JSON.stringify(d)).setMimeType(ContentService.MimeType.JSON);}
 function handle(e){
   try{
-    var b=e.postData?JSON.parse(e.postData.contents):e.parameter;
+    var b={};
+    if(e.postData&&e.postData.contents)b=JSON.parse(e.postData.contents);
+    else if(e.parameter)b=e.parameter;
     var ss=getOrCreate(b.name||'Tournament');
     var r;
-    if(b.action==='load')    r=loadAll(ss);
-    else if(b.action==='save')    r=saveAll(ss,b);
-    else if(b.action==='backup')  r=doBackup(ss);
-    else if(b.action==='request') r=addRequest(ss,b);
-    else if(b.action==='checkAccess') r=checkAccess(ss,b);
-    else r={error:'Unknown action'};
-    return out(r);
-  }catch(err){return out({error:err.toString()});}
+    if(b.action==='load')r=loadAll(ss);
+    else if(b.action==='save')r=saveAll(ss,b);
+    else if(b.action==='backup')r=doBackup(ss);
+    else if(b.action==='request')r=addRequest(ss,b);
+    else if(b.action==='checkAccess')r=checkAccess(ss,b);
+    else r={error:'Unknown action: '+b.action};
+    return respond(r);
+  }catch(err){return respond({error:err.toString()});}
 }
-function out(r){return ContentService.createTextOutput(JSON.stringify(r)).setMimeType(ContentService.MimeType.JSON);}
 function getOrCreate(name){
   var f=DriveApp.getFilesByName(name);
-  return f.hasNext()?SpreadsheetApp.open(f.next()):SpreadsheetApp.create(name);
+  if(f.hasNext())return SpreadsheetApp.open(f.next());
+  var ss=SpreadsheetApp.create(name);
+  var sh=ss.getActiveSheet();sh.setName('Tournament');
+  sh.appendRow(['Player','Round 1','Round 2','Round 3','Total']);
+  sh.getRange(1,1,1,5).setFontWeight('bold').setBackground('#C47A0A').setFontColor('#fff');
+  sh.setFrozenRows(1);
+  for(var i=1;i<=5;i++)sh.autoResizeColumn(i);
+  return ss;
 }
 function saveAll(ss,b){
-  var ps=ss.getSheetByName('Players')||ss.insertSheet('Players');
-  ps.clearContents();ps.appendRow(['ID','Name','Mode','P1','P2']);
-  (b.players||[]).forEach(function(p){ps.appendRow([p.id,p.name,p.mode||'single',p.p1||'',p.p2||'']);});
-  var sc=ss.getSheetByName('Scores')||ss.insertSheet('Scores');
-  sc.clearContents();sc.appendRow(['PlayerID','Round','Points','SavedAt']);
-  (b.scores||[]).forEach(function(s){sc.appendRow([s.pid,s.round,s.pts,s.savedAt||'']);});
-  var mt=ss.getSheetByName('Meta')||ss.insertSheet('Meta');
-  mt.clearContents();mt.appendRow(['Key','Value']);
-  mt.appendRow(['rounds',b.rounds||3]);mt.appendRow(['mode',b.mode||'single']);mt.appendRow(['name',b.name||'Tournament']);
+  var sh=ss.getSheetByName('Tournament')||ss.getActiveSheet();
+  sh.clearContents();
+  sh.appendRow(['Player','Round 1','Round 2','Round 3','Total']);
+  sh.getRange(1,1,1,5).setFontWeight('bold').setBackground('#C47A0A').setFontColor('#fff');
+  (b.players||[]).forEach(function(p){
+    var r1=p.r1||'',r2=p.r2||'',r3=p.r3||'';
+    var tot=(Number(r1)||0)+(Number(r2)||0)+(Number(r3)||0);
+    sh.appendRow([p.name,r1,r2,r3,tot]);
+  });
+  for(var i=1;i<=5;i++)sh.autoResizeColumn(i);
   return{ok:true,url:ss.getUrl()};
 }
 function loadAll(ss){
-  var out={players:[],scores:[],rounds:3,mode:'single',name:'Tournament',url:ss.getUrl()};
-  var ps=ss.getSheetByName('Players');
-  if(ps){var d=ps.getDataRange().getValues();for(var i=1;i<d.length;i++)if(d[i][0])out.players.push({id:String(d[i][0]),name:String(d[i][1]),mode:String(d[i][2]),p1:String(d[i][3]||''),p2:String(d[i][4]||'')});}
-  var sc=ss.getSheetByName('Scores');
-  if(sc){var d2=sc.getDataRange().getValues();for(var i=1;i<d2.length;i++)if(d2[i][0])out.scores.push({pid:String(d2[i][0]),round:Number(d2[i][1]),pts:Number(d2[i][2]),savedAt:String(d2[i][3]||'')});}
-  var mt=ss.getSheetByName('Meta');
-  if(mt){var d3=mt.getDataRange().getValues();for(var i=1;i<d3.length;i++){if(d3[i][0]==='rounds')out.rounds=Number(d3[i][1]);else if(d3[i][0]==='mode')out.mode=String(d3[i][1]);else if(d3[i][0]==='name')out.name=String(d3[i][1]);}}
-  return{ok:true,...out};
+  var sh=ss.getSheetByName('Tournament')||ss.getActiveSheet();
+  var d=sh.getDataRange().getValues();
+  var players=[];
+  for(var i=1;i<d.length;i++){
+    if(d[i][0])players.push({name:String(d[i][0]),r1:d[i][1]||'',r2:d[i][2]||'',r3:d[i][3]||''});
+  }
+  return{ok:true,players:players,url:ss.getUrl()};
 }
 function addRequest(ss,b){
   var sh=ss.getSheetByName('AccessRequests')||ss.insertSheet('AccessRequests');
   if(sh.getLastRow()===0)sh.appendRow(['Email','Name','Reason','Status','RequestedAt','ApprovedAt']);
-  // Check if already has approved/pending
   var d=sh.getDataRange().getValues();
   for(var i=1;i<d.length;i++){
     if(String(d[i][0]).toLowerCase()===String(b.email).toLowerCase()){
-      if(String(d[i][3])==='Approved') return{ok:true,status:'Approved'};
-      if(String(d[i][3])==='Pending')  return{ok:true,status:'Pending',msg:'Already submitted'};
+      if(String(d[i][3])==='Approved')return{ok:true,status:'Approved'};
+      if(String(d[i][3])==='Pending')return{ok:true,status:'Pending'};
     }
   }
   sh.appendRow([b.email,b.reqName||'',b.reason||'','Pending',new Date().toISOString(),'']);
-  // Email admin
-  try{
-    MailApp.sendEmail({
-      to: b.adminEmail||'',
-      subject: '🏆 Write Access Request — '+b.reqName,
-      body: 'Name: '+b.reqName+'\nEmail: '+b.email+'\nReason: '+b.reason+'\n\nOpen the AccessRequests sheet and change Status to Approved:\n'+ss.getUrl()
-    });
-  }catch(ex){}
+  try{MailApp.sendEmail({to:b.adminEmail||'',subject:'🏆 Write Access Request — '+(b.reqName||b.email),body:'Name: '+(b.reqName||'')+'\nEmail: '+b.email+'\nReason: '+(b.reason||'')+'\n\nApprove in sheet:\n'+ss.getUrl()});}catch(ex){}
   return{ok:true,status:'Pending'};
 }
 function checkAccess(ss,b){
   var sh=ss.getSheetByName('AccessRequests');
-  if(!sh) return{ok:true,status:'None'};
+  if(!sh)return{ok:true,status:'None'};
   var d=sh.getDataRange().getValues();
   for(var i=1;i<d.length;i++){
     if(String(d[i][0]).toLowerCase()===String(b.email).toLowerCase()){
       if(String(d[i][3])==='Approved'){
-        if(!d[i][5]){sh.getRange(i+1,6).setValue(new Date().toISOString());}
+        if(!d[i][5])sh.getRange(i+1,6).setValue(new Date().toISOString());
         return{ok:true,status:'Approved'};
       }
       return{ok:true,status:String(d[i][3])};
@@ -411,192 +379,114 @@ function doBackup(ss){
   var n=1;while(sheets.indexOf('backup_'+n)>=0)n++;
   var bk=ss.insertSheet('backup_'+n);
   bk.appendRow(['=== BACKUP backup_'+n+' — '+new Date().toLocaleString()+' ===']);
-  bk.appendRow([]);bk.appendRow(['--- PLAYERS ---']);
-  var ps=ss.getSheetByName('Players');
-  if(ps)ps.getDataRange().getValues().forEach(function(r){bk.appendRow(r);});
-  bk.appendRow([]);bk.appendRow(['--- SCORES ---']);
-  var sc=ss.getSheetByName('Scores');
-  if(sc)sc.getDataRange().getValues().forEach(function(r){bk.appendRow(r);});
-  if(ps){ps.clearContents();ps.appendRow(['ID','Name','Mode','P1','P2']);}
-  if(sc){sc.clearContents();sc.appendRow(['PlayerID','Round','Points','SavedAt']);}
+  var sh=ss.getSheetByName('Tournament')||ss.getActiveSheet();
+  if(sh)sh.getDataRange().getValues().forEach(function(r){bk.appendRow(r);});
+  sh.clearContents();
+  sh.appendRow(['Player','Round 1','Round 2','Round 3','Total']);
+  sh.getRange(1,1,1,5).setFontWeight('bold').setBackground('#C47A0A').setFontColor('#fff');
   return{ok:true,backupName:'backup_'+n,url:ss.getUrl()};
 }`;
 
-document.getElementById('script-area').value = AS_CODE;
+document.getElementById('script-area').value=AS_CODE;
 
-/* ══════════════════════════════════════════
-   STATE
-══════════════════════════════════════════ */
-// Access levels: 'ro' | 'pending' | 'write' | 'admin'
-let accessLevel = 'ro';
-let pendingEmail = '';   // email used for pending request
-let pollTimer    = null;
-let toastTmr;
-
-// Tournament data (loaded from sheet)
-let T = {
-  name:'Tournament', rounds:3, mode:'single',
-  players:[], scores:{}, sheetUrl:'', theme:'light'
-};
+/* ══════════════════════════════════════════ STATE */
+let accessLevel='ro', pendingEmail='', pollTimer=null, toastTmr;
+let T={name:'Tournament',players:[],sheetUrl:'',theme:'light'};
 
 function persist(){
-  // Save non-sensitive state (scores/players come from sheet)
-  localStorage.setItem('tt_theme', T.theme);
-  // Save access level for this session only (sessionStorage)
-  sessionStorage.setItem('tt_access', accessLevel);
-  sessionStorage.setItem('tt_email', pendingEmail);
+  localStorage.setItem('tt_theme',T.theme);
+  sessionStorage.setItem('tt_access',accessLevel);
+  sessionStorage.setItem('tt_email',pendingEmail);
 }
 
-/* ══════════════════════════════════════════
-   THEME
-══════════════════════════════════════════ */
-const THEMES = ['light','dark','green','blue'];
-function applyTheme(t, el){
-  T.theme = t;
-  document.body.setAttribute('data-theme', t);
-  document.querySelectorAll('.tdot').forEach(d=>d.classList.toggle('on', d.dataset.t===t));
-  localStorage.setItem('tt_theme', t);
+/* ══════════════════════════════════════════ THEME */
+const THEMES=['light','dark','green','blue'];
+function applyTheme(t,el){
+  T.theme=t;
+  document.body.setAttribute('data-theme',t);
+  document.querySelectorAll('.tdot').forEach(d=>d.classList.toggle('on',d.dataset.t===t));
+  localStorage.setItem('tt_theme',t);
 }
-function cycleTheme(){
-  applyTheme(THEMES[(THEMES.indexOf(T.theme)+1)%THEMES.length]);
-}
+function cycleTheme(){applyTheme(THEMES[(THEMES.indexOf(T.theme)+1)%THEMES.length]);}
 
-/* ══════════════════════════════════════════
-   API
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ API */
 async function api(body){
-  if(!WEB_APP_URL) throw new Error('WEB_APP_URL not configured');
-  const res = await fetch(WEB_APP_URL, {
-    method:'POST', redirect:'follow',
-    headers:{'Content-Type':'text/plain'},
-    body: JSON.stringify({...body, name: T.name || 'Tournament'})
-  });
+  if(!WEB_APP_URL)throw new Error('WEB_APP_URL not set');
+  const res=await fetch(WEB_APP_URL,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...body,name:T.name})});
   return JSON.parse(await res.text());
 }
-
-function setSyncUI(state, msg){
-  const d = document.getElementById('sdot');
-  d.className = 'sdot'+(state==='busy'?' busy':state==='err'?' err':'');
-  document.getElementById('stxt').textContent = msg;
+function setSyncUI(s,m){
+  const d=document.getElementById('sdot');
+  d.className='sdot'+(s==='busy'?' busy':s==='err'?' err':'');
+  document.getElementById('stxt').textContent=m;
 }
 
-/* ══════════════════════════════════════════
-   LOAD DATA FROM SHEET
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ LOAD/SAVE */
 async function loadFromSheet(){
-  if(!WEB_APP_URL){
-    setSyncUI('err', 'No sheet URL — see Export tab');
-    renderAll();
-    return;
-  }
+  if(!WEB_APP_URL){setSyncUI('err','No URL set');renderAll();return;}
   setSyncUI('busy','Loading…');
   try{
-    const r = await api({action:'load'});
+    const r=await api({action:'load'});
     if(r.ok){
-      T.name   = r.name   || T.name;
-      T.rounds = r.rounds || T.rounds;
-      T.mode   = r.mode   || T.mode;
-      T.players= r.players|| [];
-      T.sheetUrl= r.url   || '';
-      // Rebuild scores map
-      T.scores = {};
-      (r.scores||[]).forEach(s=>{
-        if(!T.scores[s.pid]) T.scores[s.pid]={};
-        T.scores[s.pid][s.round]=s.pts;
-      });
-      document.getElementById('tb-name').textContent = T.name;
+      T.players=r.players||[];
+      T.sheetUrl=r.url||'';
+      document.getElementById('tb-name').textContent=T.name;
       setSyncUI('ok','Live');
       renderAll();
-    } else { setSyncUI('err','Load failed'); }
-  }catch(e){ setSyncUI('err','Offline'); renderAll(); }
+    }else{setSyncUI('err','Load failed');}
+  }catch(e){setSyncUI('err','Offline');renderAll();}
 }
-
 async function syncSheet(){
-  if(!WEB_APP_URL) return;
+  if(!WEB_APP_URL)return;
   setSyncUI('busy','Saving…');
-  const scores=[];
-  Object.entries(T.scores).forEach(([pid,rs])=>
-    Object.entries(rs).forEach(([r,pts])=>
-      scores.push({pid,round:Number(r),pts:Number(pts),savedAt:new Date().toISOString()})
-    )
-  );
   try{
-    const r = await api({action:'save',rounds:T.rounds,mode:T.mode,players:T.players,scores});
-    if(r.ok){ T.sheetUrl=r.url||T.sheetUrl; setSyncUI('ok','Synced ✓'); }
+    const r=await api({action:'save',players:T.players});
+    if(r.ok){T.sheetUrl=r.url||T.sheetUrl;setSyncUI('ok','Synced ✓');}
     else setSyncUI('err','Sync failed');
-  }catch(e){ setSyncUI('err','Offline'); }
+  }catch(e){setSyncUI('err','Offline');}
 }
+async function refreshSheet(){await loadFromSheet();toast('✓ Refreshed','ok');}
 
-async function refreshSheet(){
-  await loadFromSheet();
-  toast('✓ Refreshed','ok');
-}
-
-/* ══════════════════════════════════════════
-   ACCESS CONTROL
-══════════════════════════════════════════ */
-function setAccess(level){
-  accessLevel = level;
-  sessionStorage.setItem('tt_access', level);
-
-  const pill = document.getElementById('access-pill');
-  const navScores  = document.getElementById('nav-scores');
-  const navPlayers = document.getElementById('nav-players');
-  const adminBtn   = document.getElementById('admin-btn');
-  const reqSection    = document.getElementById('req-section');
-  const exportSection = document.getElementById('export-section');
-  const adminExport   = document.getElementById('admin-export-section');
-
-  if(level === 'ro'){
-    pill.className='access-pill ro'; pill.textContent='👁 View Only';
-    navScores.style.display='none'; navPlayers.style.display='none';
-    adminBtn.style.display='none';
-    reqSection.style.display=''; exportSection.style.display='none';
-    adminExport.style.display='none';
+/* ══════════════════════════════════════════ ACCESS */
+function setAccess(lv){
+  accessLevel=lv;
+  sessionStorage.setItem('tt_access',lv);
+  const pill=document.getElementById('access-pill');
+  const navS=document.getElementById('nav-scores'), navP=document.getElementById('nav-players');
+  const adminBtn=document.getElementById('admin-btn');
+  const reqSec=document.getElementById('req-section'), expSec=document.getElementById('export-section'), admExp=document.getElementById('admin-export');
+  if(lv==='ro'){
+    pill.className='access-pill ro';pill.textContent='👁 View Only';
+    navS.style.display='none';navP.style.display='none';adminBtn.style.display='none';
+    reqSec.style.display='';expSec.style.display='none';admExp.style.display='none';
     showReqForm();
-  } else if(level === 'pending'){
-    pill.className='access-pill pending'; pill.textContent='⏳ Pending';
-    navScores.style.display='none'; navPlayers.style.display='none';
-    adminBtn.style.display='none';
-    reqSection.style.display=''; exportSection.style.display='none';
-    adminExport.style.display='none';
-    showReqPending();
-    startPolling();
-  } else if(level === 'write'){
-    pill.className='access-pill write'; pill.textContent='✏️ Write Access';
-    navScores.style.display=''; navPlayers.style.display='';
-    adminBtn.style.display='none';
-    reqSection.style.display='none'; exportSection.style.display='';
-    adminExport.style.display='none';
+  }else if(lv==='pending'){
+    pill.className='access-pill pending';pill.textContent='⏳ Pending';
+    navS.style.display='none';navP.style.display='none';adminBtn.style.display='none';
+    reqSec.style.display='';expSec.style.display='none';admExp.style.display='none';
+    showReqPending();startPolling();
+  }else if(lv==='write'){
+    pill.className='access-pill write';pill.textContent='✏️ Write';
+    navS.style.display='';navP.style.display='';adminBtn.style.display='none';
+    reqSec.style.display='none';expSec.style.display='';admExp.style.display='none';
     stopPolling();
-  } else if(level === 'admin'){
-    pill.className='access-pill admin'; pill.textContent='👑 Admin';
-    navScores.style.display=''; navPlayers.style.display='';
-    adminBtn.style.display='';
-    reqSection.style.display='none'; exportSection.style.display='';
-    adminExport.style.display='';
+  }else if(lv==='admin'){
+    pill.className='access-pill admin';pill.textContent='👑 Admin';
+    navS.style.display='';navP.style.display='';adminBtn.style.display='';
+    reqSec.style.display='none';expSec.style.display='';admExp.style.display='';
     stopPolling();
   }
 }
 
-/* ── Admin PIN ── */
-function showAdminPin(){ document.getElementById('pin-modal').style.display='flex'; document.getElementById('pin-val').focus(); }
-function closeModal()  { document.getElementById('pin-modal').style.display='none'; document.getElementById('pin-val').value=''; }
+function showAdminPin(){document.getElementById('pin-modal').style.display='flex';document.getElementById('pin-val').focus();}
+function closeModal(){document.getElementById('pin-modal').style.display='none';document.getElementById('pin-val').value='';}
 function tryAdminPin(){
-  const v = document.getElementById('pin-val').value.trim();
-  if(!ADMIN_PIN){ toast('No admin PIN set in config','err'); return; }
-  if(v === ADMIN_PIN){
-    closeModal();
-    setAccess('admin');
-    goTab('lb');
-    toast('✓ Admin access unlocked','ok');
-  } else {
-    toast('Wrong PIN','err');
-    document.getElementById('pin-val').value='';
-  }
+  const v=document.getElementById('pin-val').value.trim();
+  if(!ADMIN_PIN){toast('No admin PIN set','err');return;}
+  if(v===ADMIN_PIN){closeModal();setAccess('admin');goTab('lb');toast('✓ Admin unlocked','ok');}
+  else{toast('Wrong PIN','err');document.getElementById('pin-val').value='';}
 }
 
-/* ── Request form ── */
 function showReqForm(){
   document.getElementById('req-form-wrap').style.display='';
   document.getElementById('req-pending-wrap').style.display='none';
@@ -614,167 +504,147 @@ function showReqApproved(){
 }
 
 async function submitRequest(){
-  const name   = document.getElementById('req-name').value.trim();
-  const email  = document.getElementById('req-email').value.trim();
-  const reason = document.getElementById('req-reason').value.trim();
-  if(!name||!email){ toast('Name and email are required','err'); return; }
-  if(!WEB_APP_URL){ toast('No sheet URL configured','err'); return; }
-  toast('Sending request…','');
+  const name=document.getElementById('req-name').value.trim();
+  const email=document.getElementById('req-email').value.trim();
+  const reason=document.getElementById('req-reason').value.trim();
+  if(!name||!email){toast('Name & email required','err');return;}
+  if(!WEB_APP_URL){toast('No URL set','err');return;}
+  toast('Sending…','');
   try{
-    const r = await api({
-      action:'request',
-      reqName:name, email, reason,
-      adminEmail: '' // ← optionally hardcode your email here too
-    });
-    if(r.ok){
-      pendingEmail = email;
-      sessionStorage.setItem('tt_email', email);
-      setAccess('pending');
-      toast('✓ Request sent! Waiting for approval…','ok');
-    } else { toast('Failed to send request','err'); }
-  }catch(e){ toast('Request failed — check connection','err'); }
+    const r=await api({action:'request',reqName:name,email,reason,adminEmail:''});
+    if(r.ok){pendingEmail=email;sessionStorage.setItem('tt_email',email);setAccess('pending');toast('✓ Sent! Waiting for approval…','ok');}
+    else toast('Failed to send','err');
+  }catch(e){toast('Request failed','err');}
 }
+function cancelRequest(){pendingEmail='';sessionStorage.removeItem('tt_email');setAccess('ro');}
 
-function cancelRequest(){
-  pendingEmail = '';
-  sessionStorage.removeItem('tt_email');
-  setAccess('ro');
-}
-
-/* ── Polling ── */
-function startPolling(){
-  stopPolling();
-  pollOnce();
-  pollTimer = setInterval(pollOnce, 30000);
-}
-function stopPolling(){
-  if(pollTimer){ clearInterval(pollTimer); pollTimer=null; }
-}
-
-let pollCount = 0;
+function startPolling(){stopPolling();pollOnce();pollTimer=setInterval(pollOnce,30000);}
+function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null;}}
+let pollCount=0;
 async function pollOnce(){
-  if(!pendingEmail || !WEB_APP_URL) return;
+  if(!pendingEmail||!WEB_APP_URL)return;
   pollCount++;
-  document.getElementById('poll-txt').textContent = `Checking for approval… (${pollCount})`;
+  document.getElementById('poll-txt').textContent=`Checking… (${pollCount})`;
   try{
-    const r = await api({action:'checkAccess', email:pendingEmail});
-    if(r.status === 'Approved'){
-      stopPolling();
-      showReqApproved();
-      setTimeout(()=>{
-        setAccess('write');
-        goTab('lb');
-        toast('✓ Write access granted!','ok');
-      }, 2000);
-    }
+    const r=await api({action:'checkAccess',email:pendingEmail});
+    if(r.status==='Approved'){stopPolling();showReqApproved();setTimeout(()=>{setAccess('write');goTab('lb');toast('✓ Access granted!','ok');},2000);}
   }catch(e){}
 }
 
-/* ══════════════════════════════════════════
-   PLAYERS
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ PLAYERS */
+let playerFilter = '';
 function addPlayer(){
-  if(accessLevel==='ro'||accessLevel==='pending') return;
-  if(T.mode==='single'){
-    const name=document.getElementById('np1').value.trim();
-    if(!name){ toast('Enter a name','err'); return; }
-    if(T.players.find(p=>p.name.toLowerCase()===name.toLowerCase())){ toast('Already exists','err'); return; }
-    T.players.push({id:'p_'+Date.now(),name,mode:'single',p1:'',p2:''});
-    document.getElementById('np1').value='';
-  } else {
-    const p1=document.getElementById('nd1').value.trim(), p2=document.getElementById('nd2').value.trim();
-    if(!p1||!p2){ toast('Enter both names','err'); return; }
-    const name=p1+' & '+p2;
-    if(T.players.find(p=>p.name.toLowerCase()===name.toLowerCase())){ toast('Team exists','err'); return; }
-    T.players.push({id:'p_'+Date.now(),name,mode:'double',p1,p2});
-    document.getElementById('nd1').value=''; document.getElementById('nd2').value='';
-  }
-  renderAll(); syncSheet(); toast('✓ Added!','ok');
+  if(accessLevel==='ro'||accessLevel==='pending')return;
+  const name=document.getElementById('np1').value.trim();
+  if(!name){toast('Enter a name','err');return;}
+  if(T.players.find(p=>p.name.toLowerCase()===name.toLowerCase())){toast('Already exists','err');return;}
+  T.players.push({name,r1:'',r2:'',r3:''});
+  document.getElementById('np1').value='';
+  renderAll();syncSheet();toast('✓ Added!','ok');
 }
-
-function removePlayer(id){
-  if(!confirm('Remove player and all scores?')) return;
-  T.players=T.players.filter(p=>p.id!==id);
-  delete T.scores[id];
-  renderAll(); syncSheet();
+function removePlayer(idx){
+  if(!confirm('Remove player and all scores?'))return;
+  T.players.splice(idx,1);
+  renderAll();syncSheet();
 }
-
+function filterPlayers(query){
+  playerFilter = query.toLowerCase();
+  renderPlayers();
+}
 function renderPlayers(){
-  const lbl = T.mode==='double'?'Teams':'Players';
   document.getElementById('p-count').textContent=`(${T.players.length})`;
-  document.getElementById('singles-form').style.display=T.mode==='single'?'':'none';
-  document.getElementById('doubles-form').style.display=T.mode==='double'?'':'none';
-  document.getElementById('add-p-lbl').textContent=T.mode==='double'?'➕ Add Team':'➕ Add Player';
   const el=document.getElementById('player-list');
-  if(!T.players.length){ el.innerHTML=`<div class="empty"><div class="ei">👤</div><div class="et">No ${lbl.toLowerCase()} yet.</div></div>`; return; }
-  el.innerHTML=T.players.map(p=>`
+  if(!T.players.length){el.innerHTML=`<div class="empty"><div class="ei">👤</div><div class="et">No players yet.</div></div>`;return;}
+  
+  const filtered = playerFilter 
+    ? T.players.map((p,i)=>({...p,idx:i})).filter(p=>p.name.toLowerCase().includes(playerFilter))
+    : T.players.map((p,i)=>({...p,idx:i}));
+  
+  if(!filtered.length){
+    el.innerHTML=`<div class="empty"><div class="ei">🔍</div><div class="et">No players match "${playerFilter}"</div></div>`;
+    return;
+  }
+  
+  el.innerHTML=filtered.map(p=>`
     <div class="pchip">
-      <div>
-        <div class="pcn">${p.name}</div>
-        ${p.mode==='double'?`<div class="pcs">Team · ${p.p1} + ${p.p2}</div>`:''}
-      </div>
-      <button class="pcrm" onclick="removePlayer('${p.id}')">✕ Remove</button>
+      <div class="pcn">${p.name}</div>
+      <button class="pcrm" onclick="removePlayer(${p.idx})">✕ Remove</button>
     </div>`).join('');
 }
 
-/* ══════════════════════════════════════════
-   SCORES — all rounds in one table
-══════════════════════════════════════════ */
-function pts(pid){ return Object.values(T.scores[pid]||{}).reduce((a,v)=>a+Number(v),0); }
-
+/* ══════════════════════════════════════════ SCORES */
+let scoresFilter = '';
+function pts(p){return(Number(p.r1)||0)+(Number(p.r2)||0)+(Number(p.r3)||0);}
+function filterScores(query){
+  scoresFilter = query.toLowerCase();
+  renderScores();
+}
 function renderScores(){
-  const head=document.getElementById('s-head');
   const body=document.getElementById('s-body');
-  const rounds=Array.from({length:T.rounds},(_,i)=>i+1);
-  head.innerHTML=`<th class="nth">Player / Team</th>`+rounds.map(r=>`<th>R${r}</th>`).join('')+`<th>Total</th>`;
-  if(!T.players.length){
-    body.innerHTML=`<tr><td colspan="${T.rounds+2}" style="text-align:center;color:var(--text3);padding:20px;font-size:12px;">No players — add from Players tab.</td></tr>`;
+  if(!T.players.length){body.innerHTML=`<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:20px;">No players — add from Players tab.</td></tr>`;return;}
+  
+  const filtered = scoresFilter
+    ? T.players.map((p,i)=>({...p,idx:i})).filter(p=>p.name.toLowerCase().includes(scoresFilter))
+    : T.players.map((p,i)=>({...p,idx:i}));
+  
+  if(!filtered.length){
+    body.innerHTML=`<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:20px;">No players match "${scoresFilter}"</td></tr>`;
     return;
   }
-  const isEdit = accessLevel==='write'||accessLevel==='admin';
-  body.innerHTML=T.players.map(p=>{
-    const total=pts(p.id);
-    const cols=rounds.map(r=>{
-      const v=T.scores[p.id]?.[r]??'';
-      return isEdit
-        ? `<td><input class="sci" type="number" min="0" id="sc_${p.id}_${r}" value="${v}" placeholder="0" inputmode="numeric"></td>`
-        : `<td>${v!==''?v:'—'}</td>`;
-    }).join('');
-    return `<tr><td class="pnc">${p.name}</td>${cols}<td class="tc">${total>0?total:'—'}</td></tr>`;
+  
+  const isEdit=accessLevel==='write'||accessLevel==='admin';
+  body.innerHTML=filtered.map(p=>{
+    const total=pts(p);
+    return `<tr>
+      <td class="pnc">${p.name}</td>
+      ${isEdit?`<td><input class="sci" type="number" min="0" id="r1_${p.idx}" value="${p.r1}" placeholder="0" inputmode="numeric"></td>`:`<td>${p.r1||'—'}</td>`}
+      ${isEdit?`<td><input class="sci" type="number" min="0" id="r2_${p.idx}" value="${p.r2}" placeholder="0" inputmode="numeric"></td>`:`<td>${p.r2||'—'}</td>`}
+      ${isEdit?`<td><input class="sci" type="number" min="0" id="r3_${p.idx}" value="${p.r3}" placeholder="0" inputmode="numeric"></td>`:`<td>${p.r3||'—'}</td>`}
+      <td class="tc">${total>0?total:'—'}</td>
+    </tr>`;
   }).join('');
 }
-
 function saveScores(){
-  if(accessLevel==='ro'||accessLevel==='pending') return;
-  const rounds=Array.from({length:T.rounds},(_,i)=>i+1);
-  T.players.forEach(p=>{
-    rounds.forEach(r=>{
-      const el=document.getElementById(`sc_${p.id}_${r}`);
-      if(!el) return;
-      const v=el.value.trim(); if(v==='') return;
-      if(!T.scores[p.id]) T.scores[p.id]={};
-      T.scores[p.id][r]=Number(v);
-    });
+  if(accessLevel==='ro'||accessLevel==='pending')return;
+  T.players.forEach((p,i)=>{
+    const r1=document.getElementById('r1_'+i), r2=document.getElementById('r2_'+i), r3=document.getElementById('r3_'+i);
+    if(r1)p.r1=r1.value.trim();
+    if(r2)p.r2=r2.value.trim();
+    if(r3)p.r3=r3.value.trim();
   });
-  renderAll(); syncSheet(); toast('✓ Scores saved!','ok');
+  renderAll();syncSheet();toast('✓ Scores saved!','ok');
 }
 
-/* ══════════════════════════════════════════
-   LEADERBOARD
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ LEADERBOARD */
+let leaderboardFilter = '';
+function filterLeaderboard(query){
+  leaderboardFilter = query.toLowerCase();
+  renderLeaderboard();
+}
 function renderLeaderboard(){
   const el=document.getElementById('lb-content');
   if(!T.players.length){
-    const msg = WEB_APP_URL ? 'Loading tournament data…' : '⚙️ WEB_APP_URL not set in HTML.<br>See Export tab for setup guide.';
+    const msg=WEB_APP_URL?'Loading…':'⚙️ WEB_APP_URL not set in HTML.<br>See Access tab for setup.';
     el.innerHTML=`<div class="empty"><div class="ei">🏆</div><div class="et">${msg}</div></div>`;
     return;
   }
-  const ranked=T.players.map(p=>({...p,total:pts(p.id),rp:T.scores[p.id]||{}})).sort((a,b)=>b.total-a.total);
+  
+  let ranked=T.players.map(p=>({...p,total:pts(p)})).sort((a,b)=>b.total-a.total);
+  
+  if(leaderboardFilter){
+    ranked = ranked.filter(p=>p.name.toLowerCase().includes(leaderboardFilter));
+  }
+  
+  if(!ranked.length){
+    el.innerHTML=`<div class="lb-hdr">LEADERBOARD · ${T.name}</div><div class="empty"><div class="ei">🔍</div><div class="et">No players match "${leaderboardFilter}"</div></div>`;
+    return;
+  }
+  
   const medals=['🥇','🥈','🥉'];
   el.innerHTML=
     `<div class="lb-hdr">LEADERBOARD · ${T.name}</div>`+
     ranked.map((p,i)=>{
-      const bd=Array.from({length:T.rounds},(_,r)=>r+1).map(r=>`R${r}: ${p.rp[r]??'—'}`).join(' · ');
+      const bd=[p.r1||'—',p.r2||'—',p.r3||'—'].map((v,r)=>`R${r+1}: ${v}`).join(' · ');
       return `<div class="lbc${i===0?' r1':i===1?' r2':i===2?' r3':''}">
         <div class="lb-rank">${i<3?medals[i]:i+1}</div>
         <div class="lb-info"><div class="lb-name">${p.name}</div><div class="lb-rounds">${bd}</div></div>
@@ -783,104 +653,70 @@ function renderLeaderboard(){
     }).join('');
 }
 
-/* ══════════════════════════════════════════
-   RESET WITH BACKUP
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ RESET */
 async function confirmReset(){
-  if(accessLevel!=='admin'){ toast('Admin only','err'); return; }
-  if(!confirm('Reset ALL data?\n\nA backup_N sheet will be created in Drive first.')) return;
-  if(!confirm('Final confirmation — clear all players and scores?')) return;
+  if(accessLevel!=='admin'){toast('Admin only','err');return;}
+  if(!confirm('Reset ALL data?\n\nA backup_N sheet will be created first.'))return;
+  if(!confirm('Final confirmation?'))return;
   setSyncUI('busy','Backing up…');
   try{
     const r=await api({action:'backup'});
-    if(!r.ok){ toast('Backup failed — reset cancelled','err'); return; }
-    toast(`✓ Backup saved as "${r.backupName}"`, 'ok');
-    T.players=[]; T.scores={};
-    renderAll(); syncSheet();
-    toast('✓ Data reset. Backup in Drive.','ok');
-  }catch(e){ toast('Sheet offline — reset cancelled','err'); }
+    if(!r.ok){toast('Backup failed — reset cancelled','err');return;}
+    toast(`✓ Backup: ${r.backupName}`,'ok');
+    T.players=[];
+    renderAll();syncSheet();
+    toast('✓ Data reset.','ok');
+  }catch(e){toast('Backup failed','err');}
 }
 
-/* ══════════════════════════════════════════
-   TABS
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ TABS */
 const TABS=['lb','scores','players','export'];
 function goTab(t){
-  // Restrict tabs based on access
-  if((t==='scores'||t==='players') && (accessLevel==='ro'||accessLevel==='pending')) return;
+  if((t==='scores'||t==='players')&&(accessLevel==='ro'||accessLevel==='pending'))return;
   TABS.forEach((n,i)=>{
     document.getElementById('pg-'+n).classList.toggle('on',n===t);
     const b=document.querySelectorAll('.nav-btn')[i];
-    if(b) b.classList.toggle('on',n===t);
+    if(b)b.classList.toggle('on',n===t);
   });
   document.querySelector('.scroll-area').scrollTop=0;
 }
 
-/* ══════════════════════════════════════════
-   RENDER ALL
-══════════════════════════════════════════ */
-function renderAll(){ renderLeaderboard(); renderScores(); renderPlayers(); }
+/* ══════════════════════════════════════════ RENDER */
+function renderAll(){renderLeaderboard();renderScores();renderPlayers();}
 
-/* ══════════════════════════════════════════
-   EXPORT
-══════════════════════════════════════════ */
-function openSheet(){
-  if(T.sheetUrl) window.open(T.sheetUrl,'_blank');
-  else toast('Sheet URL not loaded yet','err');
-}
+/* ══════════════════════════════════════════ EXPORT */
+function openSheet(){if(T.sheetUrl)window.open(T.sheetUrl,'_blank');else toast('Sheet URL not loaded','err');}
 function exportCSV(){
-  if(!T.players.length){ toast('No data to export','err'); return; }
-  const rounds=Array.from({length:T.rounds},(_,i)=>i+1);
-  const h=['Player/Team',...rounds.map(r=>`Round ${r}`),'Total'];
-  const rows=T.players.map(p=>[`"${p.name}"`,...rounds.map(r=>T.scores[p.id]?.[r]??''),pts(p.id)].join(','));
+  if(!T.players.length){toast('No data','err');return;}
+  const h=['Player','Round 1','Round 2','Round 3','Total'];
+  const rows=T.players.map(p=>[`"${p.name}"`,p.r1||'',p.r2||'',p.r3||'',pts(p)].join(','));
   const blob=new Blob([[h.join(','),...rows].join('\n')],{type:'text/csv'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob); a.download=`${T.name.replace(/\s+/g,'_')}.csv`;
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${T.name}.csv`;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
   toast('✓ CSV downloaded','ok');
 }
-function copyScript(){
-  navigator.clipboard.writeText(AS_CODE)
-    .then(()=>toast('✓ Script copied!','ok'))
-    .catch(()=>toast('Long-press textarea to copy','err'));
-}
+function copyScript(){navigator.clipboard.writeText(AS_CODE).then(()=>toast('✓ Copied!','ok')).catch(()=>toast('Long-press to copy','err'));}
 
-/* ══════════════════════════════════════════
-   TOAST
-══════════════════════════════════════════ */
+/* ══════════════════════════════════════════ TOAST */
 function toast(msg,type=''){
   const t=document.getElementById('toast');
-  t.textContent=msg; t.className='toast'+(type?' '+type:''); t.classList.add('show');
-  clearTimeout(toastTmr); toastTmr=setTimeout(()=>t.classList.remove('show'),3200);
+  t.textContent=msg;t.className='toast'+(type?' '+type:'');t.classList.add('show');
+  clearTimeout(toastTmr);toastTmr=setTimeout(()=>t.classList.remove('show'),3200);
 }
 
-/* ══════════════════════════════════════════
-   INIT — always starts as read-only
-   Restores write/admin only from sessionStorage
-   (sessionStorage clears when browser tab closes)
-══════════════════════════════════════════ */
-window.onload = async function(){
-  // Theme
-  const savedTheme = localStorage.getItem('tt_theme') || 'light';
+/* ══════════════════════════════════════════ INIT */
+window.onload=async function(){
+  const savedTheme=localStorage.getItem('tt_theme')||'light';
   applyTheme(savedTheme);
-
-  // Restore access from THIS session only (not localStorage)
-  const savedAccess = sessionStorage.getItem('tt_access') || 'ro';
-  const savedEmail  = sessionStorage.getItem('tt_email')  || '';
-  pendingEmail = savedEmail;
-
-  // Always start app shell visible with leaderboard
-  // Load data first, then restore access level
   await loadFromSheet();
-
-  // Restore session state AFTER data loads
-  if(savedAccess === 'admin')   setAccess('admin');
-  else if(savedAccess === 'write')  setAccess('write');
-  else if(savedAccess === 'pending'){ setAccess('pending'); } // will auto-start polling
+  const savedAccess=sessionStorage.getItem('tt_access')||'ro';
+  const savedEmail=sessionStorage.getItem('tt_email')||'';
+  pendingEmail=savedEmail;
+  if(savedAccess==='admin')setAccess('admin');
+  else if(savedAccess==='write')setAccess('write');
+  else if(savedAccess==='pending')setAccess('pending');
   else setAccess('ro');
-
-  // Show admin PIN button hint if ADMIN_PIN is configured
-  if(ADMIN_PIN) document.getElementById('admin-btn').style.display='';
+  if(ADMIN_PIN)document.getElementById('admin-btn').style.display='';
 };
 </script>
 </body>
