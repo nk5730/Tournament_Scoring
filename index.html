@@ -2,24 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>Tournament Tracker</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-[data-theme="light"]{--gold:#C47A0A;--gold-l:rgba(196,122,10,0.10);--gold-b:#F5A623;--silver:#7A8899;--bronze:#8B5A2B;--bg:#F6F6F1;--bg2:#FFFFFF;--bg3:#EFEFEA;--border:#DDDDD5;--text:#1C1C1A;--text2:#5A5A54;--text3:#AAAAAA;--green:#1A7A30;--red:#C0392B;--topbar:#FFFFFF;--sh:0 1px 5px rgba(0,0,0,.07);--lb1:linear-gradient(120deg,rgba(196,122,10,.07),#fff);--lb2:linear-gradient(120deg,rgba(122,136,153,.06),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.06),#fff);}
-[data-theme="dark"]{--gold:#F5A623;--gold-l:rgba(245,166,35,0.12);--gold-b:#FFD166;--silver:#A8B2C1;--bronze:#CD7F32;--bg:#0D1117;--bg2:#161B22;--bg3:#21262D;--border:#30363D;--text:#E6EDF3;--text2:#8B949E;--text3:#484F58;--green:#3FB950;--red:#F85149;--topbar:#161B22;--sh:none;--lb1:linear-gradient(120deg,rgba(245,166,35,.13),#161B22);--lb2:linear-gradient(120deg,rgba(168,178,193,.08),#161B22);--lb3:linear-gradient(120deg,rgba(205,127,50,.09),#161B22);}
-[data-theme="green"]{--gold:#15803D;--gold-l:rgba(21,128,61,0.10);--gold-b:#22C55E;--silver:#6B7A8D;--bronze:#8B5A2B;--bg:#F0FDF4;--bg2:#FFFFFF;--bg3:#DCFCE7;--border:#86EFAC;--text:#14532D;--text2:#166534;--text3:#4ADE80;--green:#15803D;--red:#DC2626;--topbar:#FFFFFF;--sh:0 1px 4px rgba(0,0,0,.06);--lb1:linear-gradient(120deg,rgba(21,128,61,.09),#fff);--lb2:linear-gradient(120deg,rgba(107,122,141,.05),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.05),#fff);}
-[data-theme="blue"]{--gold:#1D4ED8;--gold-l:rgba(29,78,216,0.09);--gold-b:#60A5FA;--silver:#6B7A8D;--bronze:#8B5A2B;--bg:#EFF6FF;--bg2:#FFFFFF;--bg3:#DBEAFE;--border:#93C5FD;--text:#1E3A5F;--text2:#1D4ED8;--text3:#60A5FA;--green:#15803D;--red:#DC2626;--topbar:#FFFFFF;--sh:0 1px 4px rgba(0,0,0,.06);--lb1:linear-gradient(120deg,rgba(29,78,216,.09),#fff);--lb2:linear-gradient(120deg,rgba(107,122,141,.05),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.05),#fff);}
+/* THEMES */
+[data-theme="light"]{--gold:#C47A0A;--gold-l:rgba(196,122,10,.1);--gold-b:#F5A623;--silver:#7A8899;--bronze:#8B5A2B;--bg:#F6F6F1;--bg2:#FFF;--bg3:#EFEFEA;--border:#DDDDD5;--text:#1C1C1A;--text2:#5A5A54;--text3:#AAA;--green:#1A7A30;--red:#C0392B;--topbar:#FFF;--sh:0 1px 5px rgba(0,0,0,.07);--lb1:linear-gradient(120deg,rgba(196,122,10,.07),#fff);--lb2:linear-gradient(120deg,rgba(122,136,153,.06),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.06),#fff);}
+[data-theme="dark"]{--gold:#F5A623;--gold-l:rgba(245,166,35,.12);--gold-b:#FFD166;--silver:#A8B2C1;--bronze:#CD7F32;--bg:#0D1117;--bg2:#161B22;--bg3:#21262D;--border:#30363D;--text:#E6EDF3;--text2:#8B949E;--text3:#484F58;--green:#3FB950;--red:#F85149;--topbar:#161B22;--sh:none;--lb1:linear-gradient(120deg,rgba(245,166,35,.13),#161B22);--lb2:linear-gradient(120deg,rgba(168,178,193,.08),#161B22);--lb3:linear-gradient(120deg,rgba(205,127,50,.09),#161B22);}
+[data-theme="green"]{--gold:#15803D;--gold-l:rgba(21,128,61,.1);--gold-b:#22C55E;--silver:#6B7A8D;--bronze:#8B5A2B;--bg:#F0FDF4;--bg2:#FFF;--bg3:#DCFCE7;--border:#86EFAC;--text:#14532D;--text2:#166534;--text3:#4ADE80;--green:#15803D;--red:#DC2626;--topbar:#FFF;--sh:0 1px 4px rgba(0,0,0,.06);--lb1:linear-gradient(120deg,rgba(21,128,61,.09),#fff);--lb2:linear-gradient(120deg,rgba(107,122,141,.05),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.05),#fff);}
+[data-theme="blue"]{--gold:#1D4ED8;--gold-l:rgba(29,78,216,.09);--gold-b:#60A5FA;--silver:#6B7A8D;--bronze:#8B5A2B;--bg:#EFF6FF;--bg2:#FFF;--bg3:#DBEAFE;--border:#93C5FD;--text:#1E3A5F;--text2:#1D4ED8;--text3:#60A5FA;--green:#15803D;--red:#DC2626;--topbar:#FFF;--sh:0 1px 4px rgba(0,0,0,.06);--lb1:linear-gradient(120deg,rgba(29,78,216,.09),#fff);--lb2:linear-gradient(120deg,rgba(107,122,141,.05),#fff);--lb3:linear-gradient(120deg,rgba(139,90,43,.05),#fff);}
 :root{--r:12px;--rs:8px;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito',sans-serif;overscroll-behavior:none;}
 
+/* APP */
 #app{height:100vh;display:flex;flex-direction:column;}
 .topbar{background:var(--topbar);border-bottom:1px solid var(--border);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:var(--sh);}
 .tb-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--gold);}
 .sync-row{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text2);font-weight:600;margin-top:1px;}
-.sdot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;}
+.sdot{width:6px;height:6px;border-radius:50%;background:var(--green);}
 .sdot.busy{background:var(--gold-b);animation:pulse 1s infinite;}
 .sdot.err{background:var(--red);}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -27,8 +30,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .tb-btn{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:5px 8px;font-size:12px;cursor:pointer;color:var(--text2);}
 .access-pill{font-size:10px;font-weight:700;padding:3px 9px;border-radius:99px;border:1px solid;}
 .access-pill.ro{background:var(--bg3);border-color:var(--border);color:var(--text3);}
-.access-pill.pending{background:rgba(245,166,35,0.12);border-color:rgba(245,166,35,0.4);color:var(--gold-b);}
-.access-pill.write{background:rgba(26,122,48,0.12);border-color:rgba(26,122,48,0.4);color:var(--green);}
+.access-pill.pending{background:var(--gold-l);border-color:rgba(245,166,35,.4);color:var(--gold-b);}
+.access-pill.write{background:rgba(26,122,48,.12);border-color:rgba(26,122,48,.4);color:var(--green);}
 .access-pill.admin{background:var(--gold-l);border-color:var(--gold);color:var(--gold);}
 
 .scroll-area{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
@@ -40,6 +43,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .nav-btn .ni{font-size:18px;}
 .nav-btn.on{color:var(--gold);}
 
+/* CARD */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:10px;box-shadow:var(--sh);}
 .card-title{font-size:12px;font-weight:700;color:var(--text2);margin-bottom:11px;display:flex;align-items:center;gap:5px;}
 
@@ -60,33 +64,38 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 /* SCORE TABLE */
 .score-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .stbl{width:100%;border-collapse:collapse;}
-.stbl th{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;padding:10px 8px;border-bottom:2px solid var(--border);white-space:nowrap;text-align:center;background:var(--bg2);}
-.stbl th.nth{text-align:left;min-width:110px;}
-.stbl td{padding:9px 7px;border-bottom:1px solid var(--bg3);font-size:14px;vertical-align:middle;text-align:center;}
+.stbl th{font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.4px;padding:8px 6px;border-bottom:2px solid var(--border);white-space:nowrap;text-align:center;background:var(--bg2);}
+.stbl th.nth{text-align:left;min-width:90px;}
+.stbl td{padding:7px 5px;border-bottom:1px solid var(--bg3);font-size:13px;vertical-align:middle;text-align:center;}
 .stbl tr:last-child td{border-bottom:none;}
 .stbl tr:hover td{background:var(--bg3);}
-.pnc{font-weight:700;color:var(--text);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px;}
-.sci{width:70px;padding:8px 4px;background:var(--bg3);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:16px;font-family:'Nunito',sans-serif;font-weight:700;text-align:center;transition:border-color .2s;}
+.pnc{font-weight:700;color:var(--text);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:90px;}
+.sci{width:72px;padding:9px 4px;background:var(--bg3);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:15px;font-family:'Nunito',sans-serif;font-weight:700;text-align:center;transition:border-color .2s;}
 .sci:focus{outline:none;border-color:var(--gold);}
-.tc{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);}
+.tc{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--gold);}
 
-.btn{padding:11px 15px;border-radius:var(--rs);border:none;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:transform .1s;}
+/* BUTTONS */
+.btn{padding:10px 14px;border-radius:var(--rs);border:none;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:transform .1s;}
 .btn:active{transform:scale(.97);}
 .btn-gold{background:var(--gold);color:#fff;}
 .btn-out{background:var(--bg3);border:1.5px solid var(--border);color:var(--text2);}
 .btn-red{background:rgba(192,57,43,.1);border:1.5px solid rgba(192,57,43,.3);color:var(--red);}
 .btn-full{width:100%;justify-content:center;}
 
+/* INPUTS */
 .inp{width:100%;padding:11px 12px;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:13px;font-family:'Nunito',sans-serif;transition:border-color .2s;}
 .inp:focus{outline:none;border-color:var(--gold);}
 .inp::placeholder{color:var(--text3);}
 .inp-lbl{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:5px;margin-top:11px;}
 .inp-lbl:first-child{margin-top:0;}
 
-.pchip{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:6px;}
-.pcn{font-size:14px;font-weight:700;color:var(--text);}
-.pcrm{background:rgba(192,57,43,.1);border:1px solid rgba(192,57,43,.2);color:var(--red);cursor:pointer;font-size:11px;padding:4px 9px;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;}
-.add-row{display:flex;gap:8px;margin-bottom:8px;}
+/* PLAYER CHIP */
+.pchip{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:5px;}
+.pcn{font-size:13px;font-weight:700;color:var(--text);}
+.pcs{font-size:10px;color:var(--text3);margin-top:1px;}
+.pcrm{background:rgba(192,57,43,.1);border:1px solid rgba(192,57,43,.2);color:var(--red);cursor:pointer;font-size:11px;padding:3px 8px;border-radius:6px;font-family:'Nunito',sans-serif;font-weight:700;}
+.tsep{text-align:center;font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;margin:4px 0;}
+.add-row{display:flex;gap:7px;margin-bottom:8px;}
 .add-row .inp{flex:1;}
 
 /* ACCESS REQUEST */
@@ -98,6 +107,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .req-status-sub{font-size:12px;color:var(--text2);line-height:1.5;}
 .poll-bar{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);margin-top:10px;justify-content:center;}
 
+/* ADMIN PIN MODAL */
 .modal-wrap{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;}
 .modal{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;width:100%;max-width:340px;box-shadow:0 8px 32px rgba(0,0,0,.2);}
 .modal-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--gold);margin-bottom:4px;}
@@ -106,17 +116,39 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 .pin-inp:focus{outline:none;border-color:var(--gold);}
 .modal-row{display:flex;gap:8px;margin-top:10px;}
 
+/* THEME DOTS */
 .tdots{display:flex;gap:8px;margin-top:8px;}
-.tdot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:transform .15s,border-color .15s;flex-shrink:0;}
+.tdot{width:26px;height:26px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:transform .15s,border-color .15s;}
 .tdot.on{border-color:var(--text);transform:scale(1.2);}
 
+/* SEARCH BAR */
+.search-wrap{margin-bottom:10px;position:relative;}
+.search-inp{width:100%;padding:10px 12px 10px 36px;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:13px;font-family:'Nunito',sans-serif;transition:border-color .2s;}
+.search-inp:focus{outline:none;border-color:var(--gold);}
+.search-inp::placeholder{color:var(--text3);}
+.search-ico{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:14px;pointer-events:none;}
+
+/* ROUND COLOR DOTS */
+.r1-dot{color:#3B82F6;font-weight:700;}
+.r2-dot{color:#F59E0B;font-weight:700;}
+.r3-dot{color:#10B981;font-weight:700;}
+.lb-round-chips{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+.lb-rchip{font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;}
+.lb-rchip.rc1{background:rgba(59,130,246,.15);color:#3B82F6;}
+.lb-rchip.rc2{background:rgba(245,158,11,.15);color:#F59E0B;}
+.lb-rchip.rc3{background:rgba(16,185,129,.15);color:#10B981;}
+
+/* AUTO-SAVE indicator */
+.autosave-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:var(--green);font-weight:700;}
 .empty{text-align:center;padding:32px 16px;color:var(--text3);}
 .ei{font-size:32px;margin-bottom:6px;}
 .et{font-size:12px;line-height:1.6;}
 
+/* INFO BOX */
 .info-box{background:var(--gold-l);border:1px solid rgba(196,122,10,.25);border-radius:var(--rs);padding:11px 13px;font-size:12px;color:var(--text2);line-height:1.6;margin-bottom:10px;}
 .info-box b{color:var(--text);}
 
+/* TOAST */
 .toast{position:fixed;bottom:72px;left:50%;transform:translateX(-50%) translateY(14px);background:var(--bg2);color:var(--text);border:1px solid var(--border);padding:9px 16px;border-radius:99px;font-size:12px;font-weight:600;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;z-index:9999;white-space:nowrap;max-width:92vw;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.1);}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .toast.ok{background:#e8f9ee;border-color:var(--green);color:var(--green);}
@@ -133,54 +165,54 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
     </div>
     <div class="tb-right">
       <span class="access-pill ro" id="access-pill">👁 View Only</span>
+      <button class="tb-btn" id="ro-access-btn" onclick="showAdminPin()" title="Enter access code">🔑 Enter Code</button>
       <button class="tb-btn" onclick="cycleTheme()">🎨</button>
       <button class="tb-btn" id="admin-btn" style="display:none;" onclick="showAdminPin()">🔑</button>
     </div>
   </div>
 
   <div class="scroll-area">
-    <!-- LEADERBOARD -->
     <div id="pg-lb" class="page on">
-      <input class="inp" id="search-lb" placeholder="🔍 Search leaderboard…" oninput="filterLeaderboard(this.value)" style="margin-bottom:10px;">
+      <div class="search-wrap"><span class="search-ico">🔍</span><input class="search-inp" id="lb-search" placeholder="Search players…" oninput="filterLeaderboard(this.value)"></div>
       <div id="lb-content"></div>
     </div>
 
-    <!-- SCORES -->
     <div id="pg-scores" class="page">
       <div class="card">
-        <div class="card-title">✏️ Scores — 3 Rounds</div>
-        <input class="inp" id="search-scores" placeholder="🔍 Search players…" oninput="filterScores(this.value)" style="margin-bottom:10px;">
+        <div class="card-title">✏️ Scores — All Rounds <span class="autosave-badge" id="autosave-badge" style="display:none;">⚡ Auto-saving…</span></div>
+        <div class="search-wrap"><span class="search-ico">🔍</span><input class="search-inp" id="score-search" placeholder="Search players…" oninput="filterScores(this.value)"></div>
         <div class="score-wrap">
-          <table class="stbl">
-            <thead><tr><th class="nth">Player</th><th>Round 1</th><th>Round 2</th><th>Round 3</th><th>Total</th></tr></thead>
-            <tbody id="s-body"></tbody>
-          </table>
-        </div>
-        <div style="margin-top:12px;">
-          <button class="btn btn-gold btn-full" onclick="saveScores()">💾 Save All Scores</button>
+          <table class="stbl"><thead><tr id="s-head"></tr></thead><tbody id="s-body"></tbody></table>
         </div>
       </div>
     </div>
 
-    <!-- PLAYERS -->
     <div id="pg-players" class="page">
       <div class="card" id="add-p-card">
-        <div class="card-title">➕ Add Player</div>
-        <div class="add-row">
-          <input class="inp" id="np1" placeholder="Player name…" onkeydown="if(event.key==='Enter')addPlayer()">
-          <button class="btn btn-gold" onclick="addPlayer()">Add</button>
+        <div class="card-title" id="add-p-lbl">➕ Add Player</div>
+        <div id="singles-form">
+          <div class="add-row">
+            <input class="inp" id="np1" placeholder="Player name…" onkeydown="if(event.key==='Enter')addPlayer()">
+            <button class="btn btn-gold" onclick="addPlayer()">Add</button>
+          </div>
+        </div>
+        <div id="doubles-form" style="display:none;">
+          <div class="add-row"><input class="inp" id="nd1" placeholder="Player 1…"></div>
+          <div class="tsep">+ partner</div>
+          <div class="add-row">
+            <input class="inp" id="nd2" placeholder="Player 2…" onkeydown="if(event.key==='Enter')addPlayer()">
+            <button class="btn btn-gold" onclick="addPlayer()">Add Team</button>
+          </div>
         </div>
       </div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;color:var(--text2);margin:12px 0 8px;">
         👥 Players <span id="p-count" style="color:var(--gold);"></span>
       </div>
-      <input class="inp" id="search-players" placeholder="🔍 Search players…" oninput="filterPlayers(this.value)" style="margin-bottom:10px;">
+      <div class="search-wrap"><span class="search-ico">🔍</span><input class="search-inp" id="players-search" placeholder="Search players…" oninput="filterPlayers(this.value)"></div>
       <div id="player-list"></div>
     </div>
 
-    <!-- EXPORT / ACCESS -->
     <div id="pg-export" class="page">
-      <!-- REQUEST ACCESS -->
       <div id="req-section">
         <div class="card">
           <div class="card-title">🔓 Request Write Access</div>
@@ -198,7 +230,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
               <div class="req-status-icon">⏳</div>
               <div class="req-status-title" style="color:var(--gold-b);">Request Pending</div>
               <div class="req-status-sub">Your request has been sent.<br>This page checks for approval automatically.</div>
-              <div class="poll-bar"><div class="sdot busy"></div><span id="poll-txt">Checking…</span></div>
+              <div class="poll-bar"><div class="sdot busy"></div><span id="poll-txt">Checking for approval…</span></div>
             </div>
             <button class="btn btn-out btn-full" onclick="cancelRequest()">Cancel Request</button>
           </div>
@@ -206,72 +238,79 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
             <div class="req-status-box approved">
               <div class="req-status-icon">✅</div>
               <div class="req-status-title" style="color:var(--green);">Access Approved!</div>
-              <div class="req-status-sub">You now have write access.<br>Redirecting…</div>
+              <div class="req-status-sub">You now have write access.<br>Redirecting you now…</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- EXPORT (write access) -->
       <div id="export-section" style="display:none;">
         <div class="card">
           <div class="card-title">📊 Google Sheet</div>
-          <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="openSheet()">🔗 Open on Drive</button>
+          <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="openSheet()">🔗 Open on Google Drive</button>
           <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="refreshSheet()">🔄 Refresh from Sheet</button>
           <button class="btn btn-out btn-full" onclick="exportCSV()">⬇ Download CSV</button>
         </div>
-        <div id="admin-export" style="display:none;">
+        <div id="admin-export-section" style="display:none;">
           <div class="card">
             <div class="card-title">👑 Admin — Access Requests</div>
-            <div class="info-box">Open Sheet → <b>AccessRequests</b> tab → change <b>Status</b> to <b>Approved</b>. User unlocks in 30s.</div>
-            <button class="btn btn-out btn-full" onclick="openSheet()">📋 Open AccessRequests</button>
+            <div class="info-box">Open the Google Sheet → <b>AccessRequests</b> tab → change <b>Status</b> column from <b>Pending</b> to <b>Approved</b>. The user's app will unlock automatically within 30 seconds.</div>
+            <button class="btn btn-out btn-full" style="margin-bottom:7px;" onclick="openSheet()">📋 Open AccessRequests Sheet</button>
           </div>
           <div class="card">
             <div class="card-title">🎨 Theme</div>
             <div class="tdots">
-              <div class="tdot on" data-t="light"  style="background:#F6F6F1;border-color:#999;" onclick="applyTheme('light',this)"></div>
-              <div class="tdot"    data-t="dark"   style="background:#0D1117;"                  onclick="applyTheme('dark',this)"></div>
-              <div class="tdot"    data-t="green"  style="background:#15803D;"                  onclick="applyTheme('green',this)"></div>
-              <div class="tdot"    data-t="blue"   style="background:#1D4ED8;"                  onclick="applyTheme('blue',this)"></div>
+              <div class="tdot on" data-t="light" style="background:#F6F6F1;border-color:#999;" onclick="applyTheme('light',this)"></div>
+              <div class="tdot" data-t="dark" style="background:#0D1117;" onclick="applyTheme('dark',this)"></div>
+              <div class="tdot" data-t="green" style="background:#15803D;" onclick="applyTheme('green',this)"></div>
+              <div class="tdot" data-t="blue" style="background:#1D4ED8;" onclick="applyTheme('blue',this)"></div>
             </div>
           </div>
           <div class="card">
             <div class="card-title" style="color:var(--red);">⚠️ Danger Zone</div>
-            <div style="font-size:12px;color:var(--text2);margin-bottom:9px;">Creates <b>backup_N</b> sheet before clearing.</div>
-            <button class="btn btn-red btn-full" onclick="confirmReset()">🔄 Reset &amp; Backup</button>
+            <div style="font-size:12px;color:var(--text2);margin-bottom:9px;line-height:1.5;">Creates a <b>backup_N</b> sheet in Drive before clearing all data.</div>
+            <button class="btn btn-red btn-full" onclick="confirmReset()">🔄 Reset &amp; Backup Data</button>
+          </div>
+          <div class="card">
+            <div class="card-title">⚙️ Apps Script Code</div>
+            <div style="font-size:11px;color:var(--text2);margin-bottom:7px;line-height:1.5;">Copy this code and paste it in script.google.com to enable Google Drive sync.</div>
+            <textarea id="script-area" readonly style="width:100%;min-height:90px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--green);font-family:monospace;font-size:10px;padding:10px;line-height:1.5;resize:none;"></textarea>
+            <button class="btn btn-out btn-full" style="margin-top:7px;" onclick="copyScript()">📋 Copy Script</button>
           </div>
         </div>
       </div>
 
-      <!-- SETUP GUIDE -->
-      <div class="card">
-        <div class="card-title">📖 Setup Guide</div>
-        <div class="info-box" style="margin:0;">
-          <b>1.</b> Go to <b>script.google.com</b> → New project → paste script below → Save<br><br>
-          <b>2.</b> Deploy → Web App → Execute as: <b>Me</b> · Access: <b>Anyone</b> → Deploy → Copy URL<br><br>
-          <b>3.</b> In HTML, set:<br>
-          <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">WEB_APP_URL = 'your-url'</code><br>
-          <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">ADMIN_PIN = 'secret'</code>
+      <div class="card" style="margin-top:4px;">
+        <div class="card-title">📖 Setup Instructions</div>
+        <div class="info-box" style="margin-bottom:0;">
+          <b>Step 1</b> — Go to <b>script.google.com</b> → New project<br>
+          Copy the Apps Script code above → Paste → Save<br><br>
+          <b>Step 2</b> — Click <b>Deploy → New deployment → Web App</b><br>
+          Execute as: <b>Me</b> | Who has access: <b>Anyone</b> → Deploy<br>
+          Authorize when prompted → Copy the <b>Web App URL</b><br><br>
+          <b>Step 3</b> — Open this HTML file in a text editor<br>
+          Find: <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">const WEB_APP_URL = ''</code><br>
+          Paste your URL between the quotes<br>
+          Set: <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:11px;">const ADMIN_PIN = 'your-pin'</code><br><br>
+          <b>Step 4</b> — Save the HTML file → Push to GitHub Pages<br>
+          Done! Sheet auto-creates on first save.
         </div>
-        <textarea id="script-area" readonly style="width:100%;min-height:90px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--green);font-family:monospace;font-size:10px;padding:10px;line-height:1.5;resize:none;margin-top:10px;"></textarea>
-        <button class="btn btn-out btn-full" style="margin-top:7px;" onclick="copyScript()">📋 Copy Script</button>
       </div>
     </div>
   </div>
 
   <div class="bottom-nav">
-    <button class="nav-btn on"  onclick="goTab('lb')">     <span class="ni">🏆</span>Board</button>
-    <button class="nav-btn" id="nav-scores"  onclick="goTab('scores')"> <span class="ni">✏️</span>Scores</button>
+    <button class="nav-btn on" onclick="goTab('lb')"><span class="ni">🏆</span>Board</button>
+    <button class="nav-btn" id="nav-scores" onclick="goTab('scores')"><span class="ni">✏️</span>Scores</button>
     <button class="nav-btn" id="nav-players" onclick="goTab('players')"><span class="ni">👥</span>Players</button>
-    <button class="nav-btn" onclick="goTab('export')"> <span class="ni">📤</span>Access</button>
+    <button class="nav-btn" id="nav-export" onclick="goTab('export')"><span class="ni">📤</span>Access</button>
   </div>
 </div>
 
-<!-- ADMIN PIN MODAL -->
 <div class="modal-wrap" id="pin-modal" style="display:none;">
   <div class="modal">
-    <div class="modal-title">🔑 Admin Access</div>
-    <div class="modal-sub">Enter admin PIN to unlock full management.</div>
+    <div class="modal-title">🔑 Enter Access Code</div>
+    <div class="modal-sub">Enter your PIN to unlock write or admin access to the tournament.</div>
     <input class="pin-inp" id="pin-val" type="password" placeholder="••••" onkeydown="if(event.key==='Enter')tryAdminPin()">
     <div class="modal-row">
       <button class="btn btn-out btn-full" onclick="closeModal()">Cancel</button>
@@ -283,16 +322,17 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Nunito
 <div class="toast" id="toast"></div>
 
 <script>
-/* ═══════════════════════════════════════════════════
-   ▼▼▼  CONFIGURE BEFORE PUSHING TO GITHUB  ▼▼▼
-═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════════
+   ▼▼▼  PASTE YOUR WEB APP URL AND ADMIN PIN HERE BEFORE DEPLOYING ▼▼▼
+═══════════════════════════════════════════════════════════════════ */
 const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyG23iSwf7g2LWqpUxENpsmJxTlV7gZqCrsPUwnzPhhL4JFrAH3HxP6VzXwU0xDT-H8/exec';   // ← paste Web App URL here
 const ADMIN_PIN   = 'DadaBhagwan';   // ← set admin PIN here
-/* ═══════════════════════════════════════════════════
-   ▲▲▲  THAT'S ALL YOU NEED TO CHANGE  ▲▲▲
-═══════════════════════════════════════════════════ */
+const WRITE_PIN   = '';              // ← (Optional) set a separate write-only PIN here
+const ADMIN_EMAIL = '';  // ← (Optional) Your email for access request notifications
+/* ═══════════════════════════════════════════════════════════════════
+   ▲▲▲  THAT'S ALL YOU NEED TO CONFIGURE  ▲▲▲
+═══════════════════════════════════════════════════════════════════ */
 
-/* ── APPS SCRIPT (copy to script.google.com) ── */
 const AS_CODE = `function doGet(e){return handle(e);}
 function doPost(e){return handle(e);}
 function respond(d){return ContentService.createTextOutput(JSON.stringify(d)).setMimeType(ContentService.MimeType.JSON);}
@@ -313,37 +353,104 @@ function handle(e){
   }catch(err){return respond({error:err.toString()});}
 }
 function getOrCreate(name){
-  var f=DriveApp.getFilesByName(name);
-  if(f.hasNext())return SpreadsheetApp.open(f.next());
-  var ss=SpreadsheetApp.create(name);
-  var sh=ss.getActiveSheet();sh.setName('Tournament');
-  sh.appendRow(['Player','Round 1','Round 2','Round 3','Total']);
-  sh.getRange(1,1,1,5).setFontWeight('bold').setBackground('#C47A0A').setFontColor('#fff');
-  sh.setFrozenRows(1);
-  for(var i=1;i<=5;i++)sh.autoResizeColumn(i);
-  return ss;
+  var files=DriveApp.getFilesByName(name);
+  if(files.hasNext())return SpreadsheetApp.open(files.next());
+  return SpreadsheetApp.create(name);
+}
+function getOrCreateMainSheet(ss){
+  var sh=ss.getSheetByName('Tournament');
+  if(!sh){
+    sh=ss.getActiveSheet();
+    sh.setName('Tournament');
+  }
+  // Ensure header row
+  if(sh.getLastRow()===0||String(sh.getRange(1,1).getValue()).toLowerCase()!=='player'){
+    sh.clearContents();
+    sh.appendRow(['Player','Round-1','Round-2','Round-3','Total Points']);
+    sh.getRange(1,1,1,5).setFontWeight('bold');
+  }
+  return sh;
 }
 function saveAll(ss,b){
-  var sh=ss.getSheetByName('Tournament')||ss.getActiveSheet();
-  sh.clearContents();
-  sh.appendRow(['Player','Round 1','Round 2','Round 3','Total']);
-  sh.getRange(1,1,1,5).setFontWeight('bold').setBackground('#C47A0A').setFontColor('#fff');
-  (b.players||[]).forEach(function(p){
-    var r1=p.r1||'',r2=p.r2||'',r3=p.r3||'';
-    var tot=(Number(r1)||0)+(Number(r2)||0)+(Number(r3)||0);
-    sh.appendRow([p.name,r1,r2,r3,tot]);
+  // Remove old separate sheets if they exist
+  ['Players','Scores','Meta'].forEach(function(n){
+    var s=ss.getSheetByName(n);
+    if(s&&ss.getSheets().length>1)ss.deleteSheet(s);
   });
-  for(var i=1;i<=5;i++)sh.autoResizeColumn(i);
+  var sh=getOrCreateMainSheet(ss);
+  var rounds=Number(b.rounds)||3;
+  // Build scores lookup: {pid: {round: pts}}
+  var scMap={};
+  (b.scores||[]).forEach(function(s){
+    if(!scMap[s.pid])scMap[s.pid]={};
+    scMap[s.pid][s.round]=Number(s.pts);
+  });
+  // Build player name->id map for dedup
+  var players=b.players||[];
+  // Read existing rows (skip header)
+  var lastRow=sh.getLastRow();
+  var existingData=lastRow>1?sh.getRange(2,1,lastRow-1,5).getValues():[];
+  // Build index: name -> row index (1-based in sheet, 0-based in existingData)
+  var nameRowIdx={};
+  existingData.forEach(function(r,i){if(r[0])nameRowIdx[String(r[0]).toLowerCase()]=i;});
+  // Upsert each player
+  players.forEach(function(p){
+    var sc=scMap[p.id]||{};
+    var r1=sc[1]!==undefined?sc[1]:'';
+    var r2=sc[2]!==undefined?sc[2]:'';
+    var r3=sc[3]!==undefined?sc[3]:'';
+    var total=(Number(r1)||0)+(Number(r2)||0)+(Number(r3)||0);
+    var rowData=[p.name,r1,r2,r3,total];
+    var key=p.name.toLowerCase();
+    if(nameRowIdx[key]!==undefined){
+      // Update existing row
+      sh.getRange(nameRowIdx[key]+2,1,1,5).setValues([rowData]);
+    }else{
+      // Append new row
+      sh.appendRow(rowData);
+      nameRowIdx[key]=sh.getLastRow()-2;
+    }
+  });
+  // Store meta in sheet note on A1
+  sh.getRange(1,1).setNote('rounds='+rounds+'|mode='+(b.mode||'single')+'|name='+(b.name||'Tournament'));
   return{ok:true,url:ss.getUrl()};
 }
 function loadAll(ss){
-  var sh=ss.getSheetByName('Tournament')||ss.getActiveSheet();
-  var d=sh.getDataRange().getValues();
-  var players=[];
-  for(var i=1;i<d.length;i++){
-    if(d[i][0])players.push({name:String(d[i][0]),r1:d[i][1]||'',r2:d[i][2]||'',r3:d[i][3]||''});
+  var out={ok:true,players:[],scores:[],rounds:3,mode:'single',name:'Tournament',url:ss.getUrl()};
+  var sh=ss.getSheetByName('Tournament');
+  if(!sh){
+    // Try old format fallback
+    var ps=ss.getSheetByName('Players');
+    var sc=ss.getSheetByName('Scores');
+    var mt=ss.getSheetByName('Meta');
+    if(ps){var d=ps.getDataRange().getValues();for(var i=1;i<d.length;i++)if(d[i][0])out.players.push({id:String(d[i][0]),name:String(d[i][1]),mode:String(d[i][2]),p1:String(d[i][3]||''),p2:String(d[i][4]||'')});}
+    if(sc){var d2=sc.getDataRange().getValues();for(var i=1;i<d2.length;i++)if(d2[i][0])out.scores.push({pid:String(d2[i][0]),round:Number(d2[i][1]),pts:Number(d2[i][2]),savedAt:String(d2[i][3]||'')});}
+    if(mt){var d3=mt.getDataRange().getValues();for(var i=1;i<d3.length;i++){if(d3[i][0]==='rounds')out.rounds=Number(d3[i][1]);else if(d3[i][0]==='mode')out.mode=String(d3[i][1]);else if(d3[i][0]==='name')out.name=String(d3[i][1]);}}
+    return out;
   }
-  return{ok:true,players:players,url:ss.getUrl()};
+  // Parse meta from note
+  var note=sh.getRange(1,1).getNote()||'';
+  note.split('|').forEach(function(pair){
+    var kv=pair.split('=');
+    if(kv[0]==='rounds')out.rounds=Number(kv[1])||3;
+    else if(kv[0]==='mode')out.mode=kv[1]||'single';
+    else if(kv[0]==='name')out.name=kv[1]||'Tournament';
+  });
+  var lastRow=sh.getLastRow();
+  if(lastRow<2)return out;
+  var data=sh.getRange(2,1,lastRow-1,5).getValues();
+  data.forEach(function(row,i){
+    if(!row[0])return;
+    var id='p_row_'+(i+2);
+    var name=String(row[0]);
+    out.players.push({id:id,name:name,mode:'single',p1:'',p2:''});
+    [1,2,3].forEach(function(r){
+      if(row[r]!==''&&row[r]!==null&&row[r]!==undefined){
+        out.scores.push({pid:id,round:r,pts:Number(row[r]),savedAt:''});
+      }
+    });
+  });
+  return out;
 }
 function addRequest(ss,b){
   var sh=ss.getSheetByName('AccessRequests')||ss.insertSheet('AccessRequests');
@@ -352,11 +459,11 @@ function addRequest(ss,b){
   for(var i=1;i<d.length;i++){
     if(String(d[i][0]).toLowerCase()===String(b.email).toLowerCase()){
       if(String(d[i][3])==='Approved')return{ok:true,status:'Approved'};
-      if(String(d[i][3])==='Pending')return{ok:true,status:'Pending'};
+      if(String(d[i][3])==='Pending')return{ok:true,status:'Pending',msg:'Already submitted'};
     }
   }
   sh.appendRow([b.email,b.reqName||'',b.reason||'','Pending',new Date().toISOString(),'']);
-  try{MailApp.sendEmail({to:b.adminEmail||'',subject:'🏆 Write Access Request — '+(b.reqName||b.email),body:'Name: '+(b.reqName||'')+'\nEmail: '+b.email+'\nReason: '+(b.reason||'')+'\n\nApprove in sheet:\n'+ss.getUrl()});}catch(ex){}
+  try{MailApp.sendEmail({to:b.adminEmail||'',subject:'🏆 Write Access Request — '+(b.reqName||b.email),body:'Name: '+(b.reqName||'')+'\nEmail: '+b.email+'\nReason: '+(b.reason||'')+'\n\nApprove by opening the sheet and changing Status to Approved:\n'+ss.getUrl()});}catch(ex){}
   return{ok:true,status:'Pending'};
 }
 function checkAccess(ss,b){
@@ -365,41 +472,29 @@ function checkAccess(ss,b){
   var d=sh.getDataRange().getValues();
   for(var i=1;i<d.length;i++){
     if(String(d[i][0]).toLowerCase()===String(b.email).toLowerCase()){
-      if(String(d[i][3])==='Approved'){
-        if(!d[i][5])sh.getRange(i+1,6).setValue(new Date().toISOString());
-        return{ok:true,status:'Approved'};
-      }
+      if(String(d[i][3])==='Approved'){if(!d[i][5])sh.getRange(i+1,6).setValue(new Date().toISOString());return{ok:true,status:'Approved'};}
       return{ok:true,status:String(d[i][3])};
     }
   }
   return{ok:true,status:'None'};
 }
 function doBackup(ss){
+  var sh=ss.getSheetByName('Tournament');
   var sheets=ss.getSheets().map(function(s){return s.getName();});
   var n=1;while(sheets.indexOf('backup_'+n)>=0)n++;
   var bk=ss.insertSheet('backup_'+n);
   bk.appendRow(['=== BACKUP backup_'+n+' — '+new Date().toLocaleString()+' ===']);
-  var sh=ss.getSheetByName('Tournament')||ss.getActiveSheet();
   if(sh)sh.getDataRange().getValues().forEach(function(r){bk.appendRow(r);});
-  sh.clearContents();
-  sh.appendRow(['Player','Round 1','Round 2','Round 3','Total']);
-  sh.getRange(1,1,1,5).setFontWeight('bold').setBackground('#C47A0A').setFontColor('#fff');
+  if(sh){sh.clearContents();sh.appendRow(['Player','Round-1','Round-2','Round-3','Total Points']);sh.getRange(1,1,1,5).setFontWeight('bold');}
   return{ok:true,backupName:'backup_'+n,url:ss.getUrl()};
 }`;
 
 document.getElementById('script-area').value=AS_CODE;
 
-/* ══════════════════════════════════════════ STATE */
-let accessLevel='ro', pendingEmail='', pollTimer=null, toastTmr;
-let T={name:'Tournament',players:[],sheetUrl:'',theme:'light'};
+let accessLevel='ro',pendingEmail='',pollTimer=null,toastTmr;
+let T={name:'Tournament',rounds:3,mode:'single',players:[],scores:{},sheetUrl:'',theme:'light'};
 
-function persist(){
-  localStorage.setItem('tt_theme',T.theme);
-  sessionStorage.setItem('tt_access',accessLevel);
-  sessionStorage.setItem('tt_email',pendingEmail);
-}
-
-/* ══════════════════════════════════════════ THEME */
+/* THEME */
 const THEMES=['light','dark','green','blue'];
 function applyTheme(t,el){
   T.theme=t;
@@ -409,10 +504,10 @@ function applyTheme(t,el){
 }
 function cycleTheme(){applyTheme(THEMES[(THEMES.indexOf(T.theme)+1)%THEMES.length]);}
 
-/* ══════════════════════════════════════════ API */
+/* API */
 async function api(body){
-  if(!WEB_APP_URL)throw new Error('WEB_APP_URL not set');
-  const res=await fetch(WEB_APP_URL,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...body,name:T.name})});
+  if(!WEB_APP_URL)throw new Error('WEB_APP_URL not configured');
+  const res=await fetch(WEB_APP_URL,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...body,name:T.name||'Tournament',adminEmail:ADMIN_EMAIL})});
   return JSON.parse(await res.text());
 }
 function setSyncUI(s,m){
@@ -421,72 +516,89 @@ function setSyncUI(s,m){
   document.getElementById('stxt').textContent=m;
 }
 
-/* ══════════════════════════════════════════ LOAD/SAVE */
+/* LOAD/SYNC */
 async function loadFromSheet(){
-  if(!WEB_APP_URL){setSyncUI('err','No URL set');renderAll();return;}
+  if(!WEB_APP_URL){setSyncUI('err','Not configured');renderAll();return;}
   setSyncUI('busy','Loading…');
   try{
     const r=await api({action:'load'});
     if(r.ok){
-      T.players=r.players||[];
-      T.sheetUrl=r.url||'';
+      T.name=r.name||T.name;T.rounds=r.rounds||T.rounds;T.mode=r.mode||T.mode;T.players=r.players||[];T.sheetUrl=r.url||'';
+      T.scores={};(r.scores||[]).forEach(s=>{if(!T.scores[s.pid])T.scores[s.pid]={};T.scores[s.pid][s.round]=s.pts;});
       document.getElementById('tb-name').textContent=T.name;
-      setSyncUI('ok','Live');
-      renderAll();
+      setSyncUI('ok','Live');renderAll();
     }else{setSyncUI('err','Load failed');}
   }catch(e){setSyncUI('err','Offline');renderAll();}
 }
 async function syncSheet(){
   if(!WEB_APP_URL)return;
   setSyncUI('busy','Saving…');
+  const scores=[];
+  Object.entries(T.scores).forEach(([pid,rs])=>Object.entries(rs).forEach(([r,pts])=>scores.push({pid,round:Number(r),pts:Number(pts),savedAt:new Date().toISOString()})));
   try{
-    const r=await api({action:'save',players:T.players});
+    const r=await api({action:'save',rounds:T.rounds,mode:T.mode,players:T.players,scores});
     if(r.ok){T.sheetUrl=r.url||T.sheetUrl;setSyncUI('ok','Synced ✓');}
     else setSyncUI('err','Sync failed');
   }catch(e){setSyncUI('err','Offline');}
 }
 async function refreshSheet(){await loadFromSheet();toast('✓ Refreshed','ok');}
 
-/* ══════════════════════════════════════════ ACCESS */
+/* ACCESS CONTROL */
 function setAccess(lv){
   accessLevel=lv;
   sessionStorage.setItem('tt_access',lv);
   const pill=document.getElementById('access-pill');
-  const navS=document.getElementById('nav-scores'), navP=document.getElementById('nav-players');
+  const navScores=document.getElementById('nav-scores'),navPlayers=document.getElementById('nav-players');
+  const navExport=document.getElementById('nav-export');
   const adminBtn=document.getElementById('admin-btn');
-  const reqSec=document.getElementById('req-section'), expSec=document.getElementById('export-section'), admExp=document.getElementById('admin-export');
+  const roAccessBtn=document.getElementById('ro-access-btn');
+  const reqSection=document.getElementById('req-section'),exportSection=document.getElementById('export-section'),adminExport=document.getElementById('admin-export-section');
   if(lv==='ro'){
     pill.className='access-pill ro';pill.textContent='👁 View Only';
-    navS.style.display='none';navP.style.display='none';adminBtn.style.display='none';
-    reqSec.style.display='';expSec.style.display='none';admExp.style.display='none';
+    navScores.style.display='none';navPlayers.style.display='none';adminBtn.style.display='none';
+    navExport.style.display='none';
+    if(roAccessBtn)roAccessBtn.style.display='';
+    reqSection.style.display='';exportSection.style.display='none';adminExport.style.display='none';
     showReqForm();
   }else if(lv==='pending'){
     pill.className='access-pill pending';pill.textContent='⏳ Pending';
-    navS.style.display='none';navP.style.display='none';adminBtn.style.display='none';
-    reqSec.style.display='';expSec.style.display='none';admExp.style.display='none';
+    navScores.style.display='none';navPlayers.style.display='none';adminBtn.style.display='none';
+    navExport.style.display='none';
+    if(roAccessBtn)roAccessBtn.style.display='';
+    reqSection.style.display='';exportSection.style.display='none';adminExport.style.display='none';
     showReqPending();startPolling();
   }else if(lv==='write'){
-    pill.className='access-pill write';pill.textContent='✏️ Write';
-    navS.style.display='';navP.style.display='';adminBtn.style.display='none';
-    reqSec.style.display='none';expSec.style.display='';admExp.style.display='none';
+    pill.className='access-pill write';pill.textContent='✏️ Write Access';
+    navScores.style.display='';navPlayers.style.display='';adminBtn.style.display='none';
+    navExport.style.display='';
+    if(roAccessBtn)roAccessBtn.style.display='none';
+    reqSection.style.display='none';exportSection.style.display='';adminExport.style.display='none';
     stopPolling();
+    renderScores();
   }else if(lv==='admin'){
     pill.className='access-pill admin';pill.textContent='👑 Admin';
-    navS.style.display='';navP.style.display='';adminBtn.style.display='';
-    reqSec.style.display='none';expSec.style.display='';admExp.style.display='';
+    navScores.style.display='';navPlayers.style.display='';adminBtn.style.display='';
+    navExport.style.display='';
+    if(roAccessBtn)roAccessBtn.style.display='none';
+    reqSection.style.display='none';exportSection.style.display='';adminExport.style.display='';
     stopPolling();
+    renderScores();
   }
 }
 
+/* ADMIN PIN */
 function showAdminPin(){document.getElementById('pin-modal').style.display='flex';document.getElementById('pin-val').focus();}
 function closeModal(){document.getElementById('pin-modal').style.display='none';document.getElementById('pin-val').value='';}
 function tryAdminPin(){
   const v=document.getElementById('pin-val').value.trim();
-  if(!ADMIN_PIN){toast('No admin PIN set','err');return;}
-  if(v===ADMIN_PIN){closeModal();setAccess('admin');goTab('lb');toast('✓ Admin unlocked','ok');}
+  if(!ADMIN_PIN&&!WRITE_PIN){toast('No access PIN set','err');return;}
+  if(ADMIN_PIN&&v===ADMIN_PIN){closeModal();setAccess('admin');goTab('lb');toast('✓ Admin access unlocked','ok');}
+  else if(WRITE_PIN&&v===WRITE_PIN){closeModal();setAccess('write');goTab('scores');toast('✓ Write access unlocked','ok');}
+  else if(ADMIN_PIN&&v===ADMIN_PIN){closeModal();setAccess('admin');goTab('lb');toast('✓ Admin access unlocked','ok');}
   else{toast('Wrong PIN','err');document.getElementById('pin-val').value='';}
 }
 
+/* REQUEST FORM */
 function showReqForm(){
   document.getElementById('req-form-wrap').style.display='';
   document.getElementById('req-pending-wrap').style.display='none';
@@ -502,177 +614,188 @@ function showReqApproved(){
   document.getElementById('req-pending-wrap').style.display='none';
   document.getElementById('req-approved-wrap').style.display='';
 }
-
 async function submitRequest(){
   const name=document.getElementById('req-name').value.trim();
   const email=document.getElementById('req-email').value.trim();
   const reason=document.getElementById('req-reason').value.trim();
-  if(!name||!email){toast('Name & email required','err');return;}
-  if(!WEB_APP_URL){toast('No URL set','err');return;}
-  toast('Sending…','');
+  if(!name||!email){toast('Name and email required','err');return;}
+  if(!WEB_APP_URL){toast('No sheet URL configured','err');return;}
+  toast('Sending request…','');
   try{
-    const r=await api({action:'request',reqName:name,email,reason,adminEmail:''});
-    if(r.ok){pendingEmail=email;sessionStorage.setItem('tt_email',email);setAccess('pending');toast('✓ Sent! Waiting for approval…','ok');}
-    else toast('Failed to send','err');
+    const r=await api({action:'request',reqName:name,email,reason});
+    if(r.ok){
+      pendingEmail=email;
+      sessionStorage.setItem('tt_email',email);
+      setAccess('pending');
+      toast('✓ Request sent! Waiting for approval…','ok');
+    }else{toast('Failed to send request','err');}
   }catch(e){toast('Request failed','err');}
 }
 function cancelRequest(){pendingEmail='';sessionStorage.removeItem('tt_email');setAccess('ro');}
 
+/* POLLING */
 function startPolling(){stopPolling();pollOnce();pollTimer=setInterval(pollOnce,30000);}
 function stopPolling(){if(pollTimer){clearInterval(pollTimer);pollTimer=null;}}
 let pollCount=0;
 async function pollOnce(){
   if(!pendingEmail||!WEB_APP_URL)return;
   pollCount++;
-  document.getElementById('poll-txt').textContent=`Checking… (${pollCount})`;
+  document.getElementById('poll-txt').textContent=`Checking for approval… (${pollCount})`;
   try{
     const r=await api({action:'checkAccess',email:pendingEmail});
-    if(r.status==='Approved'){stopPolling();showReqApproved();setTimeout(()=>{setAccess('write');goTab('lb');toast('✓ Access granted!','ok');},2000);}
+    if(r.status==='Approved'){
+      stopPolling();showReqApproved();
+      setTimeout(()=>{setAccess('write');goTab('lb');toast('✓ Write access granted!','ok');},2000);
+    }
   }catch(e){}
 }
 
-/* ══════════════════════════════════════════ PLAYERS */
-let playerFilter = '';
+/* PLAYERS */
 function addPlayer(){
   if(accessLevel==='ro'||accessLevel==='pending')return;
-  const name=document.getElementById('np1').value.trim();
-  if(!name){toast('Enter a name','err');return;}
-  if(T.players.find(p=>p.name.toLowerCase()===name.toLowerCase())){toast('Already exists','err');return;}
-  T.players.push({name,r1:'',r2:'',r3:''});
-  document.getElementById('np1').value='';
+  if(T.mode==='single'){
+    const name=document.getElementById('np1').value.trim();
+    if(!name){toast('Enter a name','err');return;}
+    if(T.players.find(p=>p.name.toLowerCase()===name.toLowerCase())){toast('Already exists','err');return;}
+    T.players.push({id:'p_'+Date.now(),name,mode:'single',p1:'',p2:''});
+    document.getElementById('np1').value='';
+  }else{
+    const p1=document.getElementById('nd1').value.trim(),p2=document.getElementById('nd2').value.trim();
+    if(!p1||!p2){toast('Enter both names','err');return;}
+    const name=p1+' & '+p2;
+    if(T.players.find(p=>p.name.toLowerCase()===name.toLowerCase())){toast('Team exists','err');return;}
+    T.players.push({id:'p_'+Date.now(),name,mode:'double',p1,p2});
+    document.getElementById('nd1').value='';document.getElementById('nd2').value='';
+  }
   renderAll();syncSheet();toast('✓ Added!','ok');
 }
-function removePlayer(idx){
+function removePlayer(id){
   if(!confirm('Remove player and all scores?'))return;
-  T.players.splice(idx,1);
+  T.players=T.players.filter(p=>p.id!==id);
+  delete T.scores[id];
   renderAll();syncSheet();
 }
-function filterPlayers(query){
-  playerFilter = query.toLowerCase();
-  renderPlayers();
+function filterPlayers(q){
+  const lc=q.toLowerCase();
+  document.querySelectorAll('#player-list .pchip').forEach(el=>{
+    const name=el.querySelector('.pcn');
+    if(!name)return;
+    el.style.display=(lc&&!name.textContent.toLowerCase().includes(lc))?'none':'';
+  });
 }
 function renderPlayers(){
+  const lbl=T.mode==='double'?'Teams':'Players';
   document.getElementById('p-count').textContent=`(${T.players.length})`;
+  document.getElementById('singles-form').style.display=T.mode==='single'?'':'none';
+  document.getElementById('doubles-form').style.display=T.mode==='double'?'':'none';
+  document.getElementById('add-p-lbl').textContent=T.mode==='double'?'➕ Add Team':'➕ Add Player';
   const el=document.getElementById('player-list');
-  if(!T.players.length){el.innerHTML=`<div class="empty"><div class="ei">👤</div><div class="et">No players yet.</div></div>`;return;}
-  
-  const filtered = playerFilter 
-    ? T.players.map((p,i)=>({...p,idx:i})).filter(p=>p.name.toLowerCase().includes(playerFilter))
-    : T.players.map((p,i)=>({...p,idx:i}));
-  
-  if(!filtered.length){
-    el.innerHTML=`<div class="empty"><div class="ei">🔍</div><div class="et">No players match "${playerFilter}"</div></div>`;
-    return;
-  }
-  
-  el.innerHTML=filtered.map(p=>`
+  if(!T.players.length){el.innerHTML=`<div class="empty"><div class="ei">👤</div><div class="et">No ${lbl.toLowerCase()} yet.</div></div>`;return;}
+  el.innerHTML=T.players.map(p=>`
     <div class="pchip">
-      <div class="pcn">${p.name}</div>
-      <button class="pcrm" onclick="removePlayer(${p.idx})">✕ Remove</button>
+      <div><div class="pcn">${p.name}</div>${p.mode==='double'?`<div class="pcs">Team · ${p.p1} + ${p.p2}</div>`:''}</div>
+      <button class="pcrm" onclick="removePlayer('${p.id}')">✕ Remove</button>
     </div>`).join('');
+  // re-apply search
+  const ps=document.getElementById('players-search');
+  if(ps&&ps.value)filterPlayers(ps.value);
 }
 
-/* ══════════════════════════════════════════ SCORES */
-let scoresFilter = '';
-function pts(p){return(Number(p.r1)||0)+(Number(p.r2)||0)+(Number(p.r3)||0);}
-function filterScores(query){
-  scoresFilter = query.toLowerCase();
-  renderScores();
-}
-function renderScores(){
-  const body=document.getElementById('s-body');
-  if(!T.players.length){body.innerHTML=`<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:20px;">No players — add from Players tab.</td></tr>`;return;}
-  
-  const filtered = scoresFilter
-    ? T.players.map((p,i)=>({...p,idx:i})).filter(p=>p.name.toLowerCase().includes(scoresFilter))
-    : T.players.map((p,i)=>({...p,idx:i}));
-  
-  if(!filtered.length){
-    body.innerHTML=`<tr><td colspan="5" style="text-align:center;color:var(--text3);padding:20px;">No players match "${scoresFilter}"</td></tr>`;
-    return;
-  }
-  
-  const isEdit=accessLevel==='write'||accessLevel==='admin';
-  body.innerHTML=filtered.map(p=>{
-    const total=pts(p);
-    return `<tr>
-      <td class="pnc">${p.name}</td>
-      ${isEdit?`<td><input class="sci" type="number" min="0" id="r1_${p.idx}" value="${p.r1}" placeholder="0" inputmode="numeric"></td>`:`<td>${p.r1||'—'}</td>`}
-      ${isEdit?`<td><input class="sci" type="number" min="0" id="r2_${p.idx}" value="${p.r2}" placeholder="0" inputmode="numeric"></td>`:`<td>${p.r2||'—'}</td>`}
-      ${isEdit?`<td><input class="sci" type="number" min="0" id="r3_${p.idx}" value="${p.r3}" placeholder="0" inputmode="numeric"></td>`:`<td>${p.r3||'—'}</td>`}
-      <td class="tc">${total>0?total:'—'}</td>
-    </tr>`;
-  }).join('');
-}
-function saveScores(){
+/* SCORES */
+function pts(pid){return Object.values(T.scores[pid]||{}).reduce((a,v)=>a+Number(v),0);}
+let autoSaveTmr=null;
+function onScoreInput(pid,round,val){
   if(accessLevel==='ro'||accessLevel==='pending')return;
-  T.players.forEach((p,i)=>{
-    const r1=document.getElementById('r1_'+i), r2=document.getElementById('r2_'+i), r3=document.getElementById('r3_'+i);
-    if(r1)p.r1=r1.value.trim();
-    if(r2)p.r2=r2.value.trim();
-    if(r3)p.r3=r3.value.trim();
+  if(!T.scores[pid])T.scores[pid]={};
+  if(val.trim()===''){delete T.scores[pid][round];}
+  else{T.scores[pid][round]=Number(val);}
+  // update total cell in scores table immediately
+  const totalEl=document.getElementById(`tc_${pid}`);
+  if(totalEl){const t=pts(pid);totalEl.textContent=t>0?t:'—';}
+  // update leaderboard live (no full re-render, just refresh it)
+  renderLeaderboard();
+  // auto-save debounce
+  const badge=document.getElementById('autosave-badge');
+  if(badge)badge.style.display='';
+  clearTimeout(autoSaveTmr);
+  autoSaveTmr=setTimeout(()=>{syncSheet();if(badge)badge.style.display='none';},1200);
+}
+function filterScores(q){
+  const lc=q.toLowerCase();
+  document.querySelectorAll('#s-body tr').forEach(tr=>{
+    const name=tr.querySelector('.pnc');
+    if(!name)return;
+    tr.style.display=(lc&&!name.textContent.toLowerCase().includes(lc))?'none':'';
   });
-  renderAll();syncSheet();toast('✓ Scores saved!','ok');
+}
+function renderScores(filter){
+  const head=document.getElementById('s-head'),body=document.getElementById('s-body');
+  const rounds=Array.from({length:T.rounds},(_,i)=>i+1);
+  head.innerHTML=`<th class="nth">Player / Team</th>`+rounds.map(r=>`<th>R${r}</th>`).join('')+`<th>Total</th>`;
+  if(!T.players.length){body.innerHTML=`<tr><td colspan="${T.rounds+2}" style="text-align:center;color:var(--text3);padding:20px;font-size:12px;">No players — add from Players tab.</td></tr>`;return;}
+  const isEdit=accessLevel==='write'||accessLevel==='admin';
+  body.innerHTML=T.players.map(p=>{
+    const total=pts(p.id);
+    const cols=rounds.map(r=>{
+      const v=T.scores[p.id]?.[r]??'';
+      return isEdit?`<td><input class="sci" type="number" min="0" id="sc_${p.id}_${r}" value="${v}" placeholder="0" inputmode="numeric" oninput="onScoreInput('${p.id}',${r},this.value)"></td>`:`<td>${v!==''?v:'—'}</td>`;
+    }).join('');
+    return `<tr><td class="pnc">${p.name}</td>${cols}<td class="tc" id="tc_${p.id}">${total>0?total:'—'}</td></tr>`;
+  }).join('');
+  // re-apply search if present
+  const sq=document.getElementById('score-search');
+  if(sq&&sq.value)filterScores(sq.value);
 }
 
-/* ══════════════════════════════════════════ LEADERBOARD */
-let leaderboardFilter = '';
-function filterLeaderboard(query){
-  leaderboardFilter = query.toLowerCase();
-  renderLeaderboard();
-}
-function renderLeaderboard(){
+/* LEADERBOARD */
+const ROUND_COLORS=['rc1','rc2','rc3'];
+function renderLeaderboard(filter){
   const el=document.getElementById('lb-content');
   if(!T.players.length){
-    const msg=WEB_APP_URL?'Loading…':'⚙️ WEB_APP_URL not set in HTML.<br>See Access tab for setup.';
+    const msg=WEB_APP_URL?'Loading tournament data…':'⚙️ WEB_APP_URL not set in HTML.<br>See Access tab for setup.';
     el.innerHTML=`<div class="empty"><div class="ei">🏆</div><div class="et">${msg}</div></div>`;
     return;
   }
-  
-  let ranked=T.players.map(p=>({...p,total:pts(p)})).sort((a,b)=>b.total-a.total);
-  
-  if(leaderboardFilter){
-    ranked = ranked.filter(p=>p.name.toLowerCase().includes(leaderboardFilter));
-  }
-  
-  if(!ranked.length){
-    el.innerHTML=`<div class="lb-hdr">LEADERBOARD · ${T.name}</div><div class="empty"><div class="ei">🔍</div><div class="et">No players match "${leaderboardFilter}"</div></div>`;
-    return;
-  }
-  
+  const q=(filter||'').toLowerCase();
+  const ranked=T.players.map(p=>({...p,total:pts(p.id),rp:T.scores[p.id]||{}})).sort((a,b)=>b.total-a.total);
+  const filtered=q?ranked.filter(p=>p.name.toLowerCase().includes(q)):ranked;
   const medals=['🥇','🥈','🥉'];
-  el.innerHTML=
-    `<div class="lb-hdr">LEADERBOARD · ${T.name}</div>`+
-    ranked.map((p,i)=>{
-      const bd=[p.r1||'—',p.r2||'—',p.r3||'—'].map((v,r)=>`R${r+1}: ${v}`).join(' · ');
-      return `<div class="lbc${i===0?' r1':i===1?' r2':i===2?' r3':''}">
-        <div class="lb-rank">${i<3?medals[i]:i+1}</div>
-        <div class="lb-info"><div class="lb-name">${p.name}</div><div class="lb-rounds">${bd}</div></div>
-        <div><div class="lb-pts">${p.total}</div><div class="lb-pts-l">PTS</div></div>
+  el.innerHTML=`<div class="lb-hdr">LEADERBOARD · ${T.name}</div>`+
+    filtered.map((p,i)=>{
+      const origRank=ranked.indexOf(p);
+      const chips=Array.from({length:T.rounds},(_,r)=>r+1).map(r=>{
+        const v=p.rp[r];
+        const cc=ROUND_COLORS[r]||'rc1';
+        return `<span class="lb-rchip ${cc}">R${r}: ${v!==undefined&&v!==''?v:'—'}</span>`;
+      }).join('');
+      return `<div class="lbc${origRank===0?' r1':origRank===1?' r2':origRank===2?' r3':''}">
+        <div class="lb-rank">${origRank<3?medals[origRank]:origRank+1}</div>
+        <div class="lb-info"><div class="lb-name">${p.name}</div><div class="lb-round-chips">${chips}</div></div>
+        <div><div class="lb-pts">${p.total||0}</div><div class="lb-pts-l">PTS</div></div>
       </div>`;
-    }).join('');
+    }).join('')+(filtered.length===0?`<div class="empty"><div class="ei">🔍</div><div class="et">No players match.</div></div>`:'');
 }
+function filterLeaderboard(q){renderLeaderboard(q);}
 
-/* ══════════════════════════════════════════ RESET */
+/* RESET */
 async function confirmReset(){
   if(accessLevel!=='admin'){toast('Admin only','err');return;}
   if(!confirm('Reset ALL data?\n\nA backup_N sheet will be created first.'))return;
-  if(!confirm('Final confirmation?'))return;
+  if(!confirm('Final confirmation — clear all players and scores?'))return;
   setSyncUI('busy','Backing up…');
   try{
     const r=await api({action:'backup'});
     if(!r.ok){toast('Backup failed — reset cancelled','err');return;}
-    toast(`✓ Backup: ${r.backupName}`,'ok');
-    T.players=[];
-    renderAll();syncSheet();
-    toast('✓ Data reset.','ok');
-  }catch(e){toast('Backup failed','err');}
+    toast(`✓ Backup saved as "${r.backupName}"`,'ok');
+    T.players=[];T.scores={};renderAll();syncSheet();toast('✓ Data reset. Backup in Drive.','ok');
+  }catch(e){toast('Sheet offline — reset cancelled','err');}
 }
 
-/* ══════════════════════════════════════════ TABS */
+/* TABS */
 const TABS=['lb','scores','players','export'];
 function goTab(t){
   if((t==='scores'||t==='players')&&(accessLevel==='ro'||accessLevel==='pending'))return;
+  if(t==='export'&&(accessLevel==='ro'||accessLevel==='pending'))return;
   TABS.forEach((n,i)=>{
     document.getElementById('pg-'+n).classList.toggle('on',n===t);
     const b=document.querySelectorAll('.nav-btn')[i];
@@ -681,34 +804,47 @@ function goTab(t){
   document.querySelector('.scroll-area').scrollTop=0;
 }
 
-/* ══════════════════════════════════════════ RENDER */
+/* RENDER */
 function renderAll(){renderLeaderboard();renderScores();renderPlayers();}
 
-/* ══════════════════════════════════════════ EXPORT */
-function openSheet(){if(T.sheetUrl)window.open(T.sheetUrl,'_blank');else toast('Sheet URL not loaded','err');}
+/* EXPORT */
+function openSheet(){
+  if(T.sheetUrl)window.open(T.sheetUrl,'_blank');
+  else{
+    toast('Fetching sheet link…','');
+    api({action:'load'}).then(r=>{
+      if(r.ok&&r.url){T.sheetUrl=r.url;window.open(r.url,'_blank');}
+      else toast('Could not get sheet URL','err');
+    }).catch(()=>toast('Sheet offline','err'));
+  }
+}
 function exportCSV(){
-  if(!T.players.length){toast('No data','err');return;}
-  const h=['Player','Round 1','Round 2','Round 3','Total'];
-  const rows=T.players.map(p=>[`"${p.name}"`,p.r1||'',p.r2||'',p.r3||'',pts(p)].join(','));
+  if(!T.players.length){toast('No data to export','err');return;}
+  const rounds=Array.from({length:T.rounds},(_,i)=>i+1);
+  const h=['Player/Team',...rounds.map(r=>`Round ${r}`),'Total'];
+  const rows=T.players.map(p=>[`"${p.name}"`,...rounds.map(r=>T.scores[p.id]?.[r]??''),pts(p.id)].join(','));
   const blob=new Blob([[h.join(','),...rows].join('\n')],{type:'text/csv'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${T.name}.csv`;
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download=`${T.name.replace(/\s+/g,'_')}.csv`;
   document.body.appendChild(a);a.click();document.body.removeChild(a);
   toast('✓ CSV downloaded','ok');
 }
-function copyScript(){navigator.clipboard.writeText(AS_CODE).then(()=>toast('✓ Copied!','ok')).catch(()=>toast('Long-press to copy','err'));}
+function copyScript(){
+  navigator.clipboard.writeText(AS_CODE).then(()=>toast('✓ Script copied!','ok')).catch(()=>toast('Long-press textarea to copy','err'));
+}
 
-/* ══════════════════════════════════════════ TOAST */
+/* TOAST */
 function toast(msg,type=''){
   const t=document.getElementById('toast');
   t.textContent=msg;t.className='toast'+(type?' '+type:'');t.classList.add('show');
   clearTimeout(toastTmr);toastTmr=setTimeout(()=>t.classList.remove('show'),3200);
 }
 
-/* ══════════════════════════════════════════ INIT */
+/* INIT */
 window.onload=async function(){
   const savedTheme=localStorage.getItem('tt_theme')||'light';
   applyTheme(savedTheme);
-  await loadFromSheet();
+  // Set access level FIRST so renderAll() uses the correct level
   const savedAccess=sessionStorage.getItem('tt_access')||'ro';
   const savedEmail=sessionStorage.getItem('tt_email')||'';
   pendingEmail=savedEmail;
@@ -716,7 +852,14 @@ window.onload=async function(){
   else if(savedAccess==='write')setAccess('write');
   else if(savedAccess==='pending')setAccess('pending');
   else setAccess('ro');
-  if(ADMIN_PIN)document.getElementById('admin-btn').style.display='';
+  // NOW load from sheet — renderAll() inside will see the correct accessLevel
+  await loadFromSheet();
+  // Show admin button in topbar only for admin, otherwise ro-access-btn handles it
+  if(ADMIN_PIN)document.getElementById('admin-btn').style.display=(accessLevel==='admin'?'':'none');
+  // Show ro-access-btn only when there's a PIN configured and user is ro/pending
+  const hasPin=!!(ADMIN_PIN||WRITE_PIN);
+  const roBtn=document.getElementById('ro-access-btn');
+  if(roBtn)roBtn.style.display=(hasPin&&(accessLevel==='ro'||accessLevel==='pending'))?'':'none';
 };
 </script>
 </body>
